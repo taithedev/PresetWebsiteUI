@@ -90,7 +90,7 @@ python -m http.server 8000
         <p>Suggested spacing scale: 4, 8, 12, 16, 24, 32, 48, 64, 96. Use responsive typography with <code>clamp()</code> and a maximum content width around 1240px.</p>
       </section>
       <section class="doc-section" id="ai-reference">
-        <div class="doc-section-num">05 / FOR AI BUILDERS</div><h2>Give AI a real reference.</h2><p>Instead of vague style instructions, provide the repository URL and a repeatable visual contract. For best results, give your coding assistant the content of <a href="https://github.com/taithedev/PresetWebsiteUI/blob/main/AI_REFERENCE.md" target="_blank" rel="noopener noreferrer">AI_REFERENCE.md ↗</a> and relevant sections of <code>styles.css</code>.</p>
+        <div class="doc-section-num">05 / FOR AI BUILDERS</div><h2>Give AI a real reference.</h2><p>Instead of vague style instructions, provide the repository URL and a repeatable visual contract. For best results, give your coding assistant the content of <a href="https://github.com/taithedev/PresetWebsiteUI/blob/main/AI_REFERENCE.md" target="_blank" rel="noopener noreferrer">AI_REFERENCE.md ↗</a> and relevant sections of <code>styles.css</code>. For structured parsing, use <a href="./design-tokens.json">design-tokens.json</a> and the <a href="./llms.txt">AI reference index</a>.</p>
         <div class="ai-callout"><span>✳ &nbsp; COPY-READY INSTRUCTION</span><p>The instruction below asks an AI to reproduce the design principles, not to claim it has visited a site it cannot access.</p></div>
         <div class="snippet"><div class="snippet-head"><span>AI PROMPT / REFERENCE CONTRACT</span><button type="button" data-copy="ai-code">Copy prompt <svg class="icon"><use href="#ic-copy"/></svg></button></div><pre id="ai-code"><code>Use https://github.com/taithedev/PresetWebsiteUI as the
 visual design reference for this project.
@@ -167,6 +167,8 @@ guidance, not as a license to copy unrelated brands or content.</code></pre></di
 ├── docs.js           # documentation navigation
 ├── favicon.svg       # vector site mark
 ├── AI_REFERENCE.md   # AI-friendly visual contract
+├── design-tokens.json # machine-readable design system
+├── llms.txt           # AI documentation discovery
 ├── AGENTS.md         # coding assistant project rules
 └── README.md         # setup and project overview</code></pre></div></section>
       <section class="doc-section" id="license"><div class="doc-section-num">11 / REUSE</div><h2>Learn, adapt, make it yours.</h2><p>The repository is a visual reference and starting point for original UI work. Check the repository for licensing information before redistributing code. Product branding and content from other companies are not included.</p><a href="https://github.com/taithedev/PresetWebsiteUI" target="_blank" rel="noopener noreferrer" class="button button-primary">Open GitHub repository <svg class="icon"><use href="#ic-diagonal"/></svg></a></section>
