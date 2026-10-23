@@ -1,0 +1,17 @@
+# Preset UI
+> A coded interface design reference with premium dark-glass styling, ambient bloom, motion, live previews and documentation. It is a visual reference, not a hosted API or a backend.
+
+## Primary reference documents
+- [AI Design Reference](./AI_REFERENCE.md): Full visual contract, design guidance, CSS recipes and copy-ready prompt for coding assistants.
+- [Documentation](./docs.html): Human-readable design system, components, accessibility, bloom and motion.
+- [Machine-readable design tokens](./design-tokens.json): Exact structured colors, typography, effects and breakpoints.
+- [Site source](./index.html): Coded interface examples and gallery structure.
+- [Stylesheet](./styles.css): Definitive implementation of tokens and visual effects.
+- [Project README](./README.md): Running locally, customization and deployment instructions.
+- [Coding agent guidelines](./AGENTS.md): Repository maintenance conventions.
+
+## Reference URL
+https://github.com/taithedev/PresetWebsiteUI
+
+## AI usage guidance
+Inspect AI_REFERENCE.md and styles.css before using this style as a reference. Recreate the visual principles in the destination stack and keep the destination application's functionality. If file access is unavailable, ask for the files instead of claiming to have read them. Do not assume the repository is deployed to a public site until a live URL is verified.
