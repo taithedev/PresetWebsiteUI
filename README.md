@@ -39,7 +39,7 @@ Give your AI coding assistant:
 
 **Repository:** https://github.com/taithedev/PresetWebsiteUI
 
-**Reference files:** AI_REFERENCE.md + styles.css (+ index.html for structural examples).
+**Reference files:** AI_REFERENCE.md + styles.css + design-tokens.json (+ index.html for structural examples).
 
 Suggested instruction:
 
@@ -59,6 +59,8 @@ AI tools that cannot access GitHub will need files pasted/uploaded. See the full
 | docs.js | Documentation section tracking and demo interactions |
 | AI_REFERENCE.md | AI-friendly design contract |
 | AGENTS.md | Guidelines for future coding agents |
+| design-tokens.json | Structured design tokens for tools and AI assistants |
+| llms.txt | AI-oriented document index |
 | favicon.svg | Scalable brand mark |
 
 ## Customize
