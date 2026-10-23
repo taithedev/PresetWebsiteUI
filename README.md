@@ -133,6 +133,14 @@ Example instruction: Use the Preset UI Studio repository as the visual reference
 
 Ctrl+K / Cmd+K opens global search. Arrow keys select a result, Enter opens it, and Escape closes dialogs. Native controls, focus styles, navigation links and reduced-motion support are included, but implement and test full accessibility requirements for your target product.
 
+## Verification
+
+Run the repository's dependency-free smoke tests with Node 22 or newer:
+
+    node --test tests/smoke.test.mjs
+
+The tests check JavaScript syntax, component IDs and counts, source links, package exports and the ZIP archive writer. Visual layout and interactions still need manual browser and device testing.
+
 ## Hosting
 
 Deploy this static project through GitHub Pages, Vercel or Netlify. For GitHub Pages configure Settings → Pages → Deploy from a branch → main → /(root). The source is committed to GitHub, but that does not prove a live hosted URL is already available.
