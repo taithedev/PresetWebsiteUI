@@ -1,0 +1,419 @@
+{
+  "name": "Preset UI Studio",
+  "version": "2.0.0",
+  "description": "Public component manifest for code generation, docs and importing into Preset UI Studio.",
+  "components": [
+    {
+      "id": "primary-button",
+      "title": "Primary button",
+      "description": "A tactile, high-contrast action with subtle elevation.",
+      "html": "<div class=\"ui-row\"><button class=\"ui-btn\" data-toast=\"Action completed\">Get started →</button><button class=\"ui-btn outline\" data-toast=\"Secondary action\">Learn more</button></div>",
+      "category": "Buttons",
+      "symbol": "↗",
+      "tags": [
+        "Actions",
+        "Interactive"
+      ]
+    },
+    {
+      "id": "aurora-button",
+      "title": "Aurora gradient",
+      "description": "Color-rich gradient motion with a restrained glow.",
+      "html": "<div class=\"ui-row\"><button class=\"ui-btn gradient shine\" data-toast=\"Gradient action selected\">✦ Explore collection →</button></div>",
+      "category": "Buttons",
+      "symbol": "↗",
+      "tags": [
+        "Actions",
+        "Interactive"
+      ]
+    },
+    {
+      "id": "outline-button",
+      "title": "Outline actions",
+      "description": "A useful hierarchy for secondary and tertiary actions.",
+      "html": "<div class=\"ui-row\"><button class=\"ui-btn outline\" data-toast=\"Preview opened\">View details ↗</button><button class=\"ui-btn ghost\" data-toast=\"Settings opened\">Settings</button></div>",
+      "category": "Buttons",
+      "symbol": "↗",
+      "tags": [
+        "Actions",
+        "Interactive"
+      ]
+    },
+    {
+      "id": "icon-button",
+      "title": "Icon actions",
+      "description": "Compact controls with accessible action labels.",
+      "html": "<div class=\"ui-row\"><button class=\"ui-btn outline icon\" type=\"button\" aria-label=\"Favorite this item\" data-toggle-heart>♡</button><button class=\"ui-btn outline icon\" type=\"button\" aria-label=\"Add item\" data-toast=\"Item added\">＋</button><button class=\"ui-btn outline icon\" type=\"button\" aria-label=\"Settings\" data-toast=\"Settings\">⚙</button></div>",
+      "category": "Buttons",
+      "symbol": "↗",
+      "tags": [
+        "Actions",
+        "Interactive"
+      ]
+    },
+    {
+      "id": "loading-button",
+      "title": "Loading state",
+      "description": "Progress feedback that returns the action to normal.",
+      "html": "<button class=\"ui-btn\" type=\"button\" data-load>Run action →</button>",
+      "category": "Buttons",
+      "symbol": "↗",
+      "tags": [
+        "Actions",
+        "Interactive"
+      ]
+    },
+    {
+      "id": "pill-action",
+      "title": "Pill controls",
+      "description": "Subtle capsules for flexible content and filters.",
+      "html": "<div class=\"ui-row\"><button class=\"ui-btn\" style=\"border-radius:50px\" data-toast=\"You're in\">Join community ↗</button><button class=\"ui-btn outline\" style=\"border-radius:50px\" data-toast=\"Details opened\">All details</button></div>",
+      "category": "Buttons",
+      "symbol": "↗",
+      "tags": [
+        "Actions",
+        "Interactive"
+      ]
+    },
+    {
+      "id": "input-field",
+      "title": "Input fields",
+      "description": "Careful labels, helpful placeholder copy and focused borders.",
+      "html": "<div class=\"ui-stack\"><label class=\"ui-label\">Workspace name <input class=\"ui-input\" placeholder=\"My creative studio\" type=\"text\" autocomplete=\"off\"></label><label class=\"ui-label\">Email address <input class=\"ui-input\" placeholder=\"hello@example.com\" type=\"email\"></label></div>",
+      "category": "Forms",
+      "symbol": "⌘",
+      "tags": [
+        "Inputs",
+        "Accessible"
+      ]
+    },
+    {
+      "id": "search-field",
+      "title": "Search field",
+      "description": "A focused input for search-first interfaces.",
+      "html": "<label class=\"ui-label\" style=\"width:min(335px,100%)\">Find something<div class=\"ui-input-wrap\"><span>⌕</span><input class=\"ui-input\" placeholder=\"Search anything...\" type=\"search\" aria-label=\"Search anything\"><span>⌘K</span></div></label>",
+      "category": "Forms",
+      "symbol": "⌘",
+      "tags": [
+        "Inputs",
+        "Accessible"
+      ]
+    },
+    {
+      "id": "toggle-switch",
+      "title": "Toggle switch",
+      "description": "Accessible binary preferences with live feedback.",
+      "html": "<div class=\"ui-stack\" style=\"gap:20px\"><label class=\"ui-toggle\"><input type=\"checkbox\" checked><span class=\"ui-toggle-track\"></span> Enable notifications</label><label class=\"ui-toggle\"><input type=\"checkbox\"><span class=\"ui-toggle-track\"></span> Use compact layout</label></div>",
+      "category": "Forms",
+      "symbol": "⌘",
+      "tags": [
+        "Inputs",
+        "Accessible"
+      ]
+    },
+    {
+      "id": "checkboxes",
+      "title": "Checkbox group",
+      "description": "Multiselect options with native keyboard interaction.",
+      "html": "<fieldset style=\"border:1px solid var(--ui-line);border-radius:12px;padding:17px 20px;width:250px\"><legend style=\"color:var(--ui-muted);font-size:11px;padding:0 7px\">Preferences</legend><div class=\"ui-stack\" style=\"gap:13px\"><label class=\"ui-check\"><input type=\"checkbox\" checked> Email updates</label><label class=\"ui-check\"><input type=\"checkbox\"> Product announcements</label><label class=\"ui-check\"><input type=\"checkbox\" checked> Design insights</label></div></fieldset>",
+      "category": "Forms",
+      "symbol": "⌘",
+      "tags": [
+        "Inputs",
+        "Accessible"
+      ]
+    },
+    {
+      "id": "segmented-control",
+      "title": "Segmented control",
+      "description": "Mutually exclusive options, one selection at a time.",
+      "html": "<div class=\"ui-segmented\" role=\"group\" aria-label=\"View mode\"><button type=\"button\" aria-pressed=\"true\" data-segment>Overview</button><button type=\"button\" aria-pressed=\"false\" data-segment>Analytics</button><button type=\"button\" aria-pressed=\"false\" data-segment>Activity</button></div>",
+      "category": "Forms",
+      "symbol": "⌘",
+      "tags": [
+        "Inputs",
+        "Accessible"
+      ]
+    },
+    {
+      "id": "select-menu",
+      "title": "Select menu",
+      "description": "Native dropdown with consistent surface and focus treatment.",
+      "html": "<label class=\"ui-label\" style=\"width:250px\">Choose a plan<select class=\"ui-select\"><option>Starter — Free</option><option>Pro — $12 / month</option><option>Team — $29 / month</option></select></label>",
+      "category": "Forms",
+      "symbol": "⌘",
+      "tags": [
+        "Inputs",
+        "Accessible"
+      ]
+    },
+    {
+      "id": "navigation-tabs",
+      "title": "Underline tabs",
+      "description": "Focused navigation that reveals one view at a time.",
+      "html": "<div class=\"ui-stack\" style=\"max-width:320px\"><div class=\"ui-tabs\" role=\"tablist\" aria-label=\"Sections\"><button role=\"tab\" aria-selected=\"true\" data-tab>Overview</button><button role=\"tab\" aria-selected=\"false\" data-tab>Metrics</button><button role=\"tab\" aria-selected=\"false\" data-tab>Settings</button></div><p data-tab-content style=\"font-size:11px;color:var(--ui-muted);margin:2px 0\">Overview content is selected.</p></div>",
+      "category": "Navigation",
+      "symbol": "⌁",
+      "tags": [
+        "Navigation",
+        "Responsive"
+      ]
+    },
+    {
+      "id": "breadcrumbs",
+      "title": "Breadcrumb trail",
+      "description": "Small orientation cues for nested navigation.",
+      "html": "<nav class=\"ui-breadcrumb\" aria-label=\"Breadcrumb\"><a href=\"#home\">Home</a><span>›</span><a href=\"#library\">Library</a><span>›</span><strong>Components</strong></nav>",
+      "category": "Navigation",
+      "symbol": "⌁",
+      "tags": [
+        "Navigation",
+        "Responsive"
+      ]
+    },
+    {
+      "id": "pagination",
+      "title": "Pagination",
+      "description": "Compact page selectors with active-page state.",
+      "html": "<nav class=\"ui-pagination\" aria-label=\"Pagination\"><button type=\"button\" data-page=\"previous\" aria-label=\"Previous page\">‹</button><button type=\"button\" data-page=\"1\" aria-current=\"page\">1</button><button type=\"button\" data-page=\"2\">2</button><button type=\"button\" data-page=\"3\">3</button><button type=\"button\" data-page=\"next\" aria-label=\"Next page\">›</button></nav>",
+      "category": "Navigation",
+      "symbol": "⌁",
+      "tags": [
+        "Navigation",
+        "Responsive"
+      ]
+    },
+    {
+      "id": "compact-navbar",
+      "title": "Compact navbar",
+      "description": "A small and reliable navigation pattern.",
+      "html": "<header class=\"ui-navbar\"><strong>nexa<span style=\"color:var(--ui-accent)\">✳</span></strong><nav aria-label=\"Example navigation\"><a href=\"#features\">Features</a><a href=\"#pricing\">Pricing</a><a href=\"#contact\">Contact</a></nav><button class=\"ui-btn\" style=\"min-height:30px;padding:6px 11px;font-size:10px\" data-toast=\"Get started\">Start ↗</button></header>",
+      "category": "Navigation",
+      "symbol": "⌁",
+      "tags": [
+        "Navigation",
+        "Responsive"
+      ]
+    },
+    {
+      "id": "status-badges",
+      "title": "Status badges",
+      "description": "Quiet badges for truthful app states.",
+      "html": "<div class=\"ui-row\"><span class=\"ui-pill success\"><span class=\"dot\"></span> Healthy</span><span class=\"ui-pill\"><span class=\"dot\"></span> In progress</span><span class=\"ui-pill\">✦ Featured</span></div>",
+      "category": "Feedback",
+      "symbol": "✦",
+      "tags": [
+        "States",
+        "Motion"
+      ]
+    },
+    {
+      "id": "alert-banner",
+      "title": "Alert banner",
+      "description": "Inline feedback with space for supporting details.",
+      "html": "<div class=\"ui-alert\" role=\"status\"><span>✳</span><div><b>Everything is up to date</b><p>Your workspace has the latest changes. You're ready to keep building.</p></div></div>",
+      "category": "Feedback",
+      "symbol": "✦",
+      "tags": [
+        "States",
+        "Motion"
+      ]
+    },
+    {
+      "id": "progress-bar",
+      "title": "Progress indicator",
+      "description": "Clear completion progress with meaningful labels.",
+      "html": "<div class=\"ui-stack\" style=\"max-width:315px\"><div class=\"ui-progress-label\"><span>Project completion</span><b>72%</b></div><div class=\"ui-progress\" role=\"progressbar\" aria-valuenow=\"72\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-label=\"Project completion\"><span style=\"--value:72%\"></span></div></div>",
+      "category": "Feedback",
+      "symbol": "✦",
+      "tags": [
+        "States",
+        "Motion"
+      ]
+    },
+    {
+      "id": "toast-message",
+      "title": "Toast feedback",
+      "description": "A transient acknowledgement for completed actions.",
+      "html": "<div class=\"ui-stack\" style=\"max-width:335px\"><div class=\"ui-toast\" role=\"status\"><span class=\"toast-icon\">✓</span><div><b>Changes saved</b><small>Your workspace is up to date.</small></div></div><button type=\"button\" class=\"ui-btn outline\" data-toast=\"This toast is triggered by your button\">Try a new toast</button></div>",
+      "category": "Feedback",
+      "symbol": "✦",
+      "tags": [
+        "States",
+        "Motion"
+      ]
+    },
+    {
+      "id": "tooltip",
+      "title": "Tooltip",
+      "description": "A small accessible explanation for compact UI controls.",
+      "html": "<div class=\"ui-tooltip-wrap\"><span class=\"ui-tooltip\" role=\"tooltip\" id=\"ui-tip\">Quick actions live here</span><button class=\"ui-btn outline\" aria-describedby=\"ui-tip\" data-toast=\"Tooltip action clicked\">Hover or focus me</button></div>",
+      "category": "Feedback",
+      "symbol": "✦",
+      "tags": [
+        "States",
+        "Motion"
+      ]
+    },
+    {
+      "id": "skeleton-loading",
+      "title": "Skeleton loader",
+      "description": "Nonblocking loading placeholders with reduced-motion support.",
+      "html": "<div class=\"ui-skeleton\" aria-label=\"Loading placeholder\"><div class=\"ui-skeleton-head\"><i class=\"ui-sk circle\"></i><div class=\"ui-stack\" style=\"gap:7px;flex:1\"><i class=\"ui-sk big\"></i><i class=\"ui-sk mid\"></i></div></div><i class=\"ui-sk\"></i><i class=\"ui-sk mid\"></i><i class=\"ui-sk short\"></i></div>",
+      "category": "Feedback",
+      "symbol": "✦",
+      "tags": [
+        "States",
+        "Motion"
+      ]
+    },
+    {
+      "id": "glass-card",
+      "title": "Luminous glass card",
+      "description": "Layered lighting, a precise border and tactile depth.",
+      "html": "<article class=\"ui-card glass\"><small>✳ STUDIO STATUS</small><h3>Design in motion.</h3><p>Build thoughtful interfaces with a practical library of polished primitives.</p><div style=\"margin-top:19px\"><button class=\"ui-btn gradient\" data-toast=\"Exploring studio\">Explore system →</button></div></article>",
+      "category": "Surfaces",
+      "symbol": "◈",
+      "tags": [
+        "Cards",
+        "Layouts"
+      ]
+    },
+    {
+      "id": "stat-card",
+      "title": "Analytics stat",
+      "description": "A compact metric with trend context and a miniature graph.",
+      "html": "<article class=\"ui-card\"><div class=\"ui-stat-head\"><small>TOTAL REVENUE</small><span class=\"ui-trend\">↗ 18.6%</span></div><h3>$48,295</h3><p>Compared to the last 30 days</p><div class=\"ui-mini-bars\"><i style=\"--h:30%\"></i><i style=\"--h:49%\"></i><i style=\"--h:37%\"></i><i style=\"--h:68%\"></i><i style=\"--h:57%\"></i><i style=\"--h:82%\"></i><i style=\"--h:70%\"></i><i style=\"--h:100%\"></i></div></article>",
+      "category": "Surfaces",
+      "symbol": "◈",
+      "tags": [
+        "Cards",
+        "Layouts"
+      ]
+    },
+    {
+      "id": "profile-row",
+      "title": "Profile identity",
+      "description": "Avatar, identity and a restrained activity indicator.",
+      "html": "<div class=\"ui-card\"><div class=\"ui-profile\"><span class=\"ui-avatar\">AM</span><div><strong>Alex Morgan</strong><small>Product designer</small></div><span class=\"ui-pill success\"><span class=\"dot\"></span> Active</span></div></div>",
+      "category": "Surfaces",
+      "symbol": "◈",
+      "tags": [
+        "Cards",
+        "Layouts"
+      ]
+    },
+    {
+      "id": "pricing-card",
+      "title": "Pricing surface",
+      "description": "A conversion-focused card with transparent pricing.",
+      "html": "<article class=\"ui-card\" style=\"max-width:280px\"><span class=\"ui-pill\">✦ MOST POPULAR</span><h3 style=\"margin-top:15px\">Pro workspace</h3><p>For people building their next big thing.</p><div class=\"ui-price\">$19<span> / month</span></div><ul class=\"ui-feature-list\"><li>Unlimited projects</li><li>Priority updates</li><li>Advanced components</li></ul><button class=\"ui-btn\" style=\"width:100%\" data-toast=\"Plan selected\">Choose Pro →</button></article>",
+      "category": "Surfaces",
+      "symbol": "◈",
+      "tags": [
+        "Cards",
+        "Layouts"
+      ]
+    },
+    {
+      "id": "dialog-surface",
+      "title": "Confirmation dialog",
+      "description": "A clear decision surface for high-intent actions.",
+      "html": "<section class=\"ui-demo-modal\" role=\"group\" aria-label=\"Dialog example\"><span class=\"modal-star\">✳</span><h3>Publish your project?</h3><p>Your changes will be visible to everyone with access to the workspace.</p><div class=\"ui-row\"><button class=\"ui-btn outline\" data-toast=\"Publish canceled\">Cancel</button><button class=\"ui-btn\" data-toast=\"Demo project published\">Publish →</button></div></section>",
+      "category": "Surfaces",
+      "symbol": "◈",
+      "tags": [
+        "Cards",
+        "Layouts"
+      ]
+    },
+    {
+      "id": "data-table",
+      "title": "Data table",
+      "description": "Readable structured values with separated rows.",
+      "html": "<table class=\"ui-table\"><thead><tr><th>PROJECT</th><th>STATUS</th><th>REVENUE</th></tr></thead><tbody><tr><td>Orbit Studio</td><td><span class=\"ui-pill success\">Active</span></td><td>$6,280</td></tr><tr><td>Aurora</td><td><span class=\"ui-pill\">Pending</span></td><td>$4,100</td></tr><tr><td>Prism</td><td><span class=\"ui-pill success\">Active</span></td><td>$2,965</td></tr></tbody></table>",
+      "category": "Surfaces",
+      "symbol": "◈",
+      "tags": [
+        "Cards",
+        "Layouts"
+      ]
+    },
+    {
+      "id": "activity-timeline",
+      "title": "Activity timeline",
+      "description": "Event chronology with focused visual markers.",
+      "html": "<div class=\"ui-card\" style=\"max-width:310px\"><div class=\"ui-timeline\"><div class=\"ui-event\"><b>Design system published</b><small>Today · 10:45 AM</small></div><div class=\"ui-event\"><b>New team member joined</b><small>Yesterday · 3:20 PM</small></div><div class=\"ui-event\"><b>Workspace created</b><small>October 20 · 9:10 AM</small></div></div></div>",
+      "category": "Surfaces",
+      "symbol": "◈",
+      "tags": [
+        "Cards",
+        "Layouts"
+      ]
+    },
+    {
+      "id": "notification-list",
+      "title": "Notification stack",
+      "description": "Small, readable event cards for activity feeds.",
+      "html": "<div class=\"ui-notification-list\"><div class=\"ui-notification\"><span>✦</span><div><b>New update available</b><p>Preset UI components received improvements.</p></div></div><div class=\"ui-notification\"><span>✓</span><div><b>All changes saved</b><p>Everything has been synchronized locally.</p></div></div></div>",
+      "category": "Surfaces",
+      "symbol": "◈",
+      "tags": [
+        "Cards",
+        "Layouts"
+      ]
+    },
+    {
+      "id": "saas-hero",
+      "title": "Launch hero",
+      "description": "A complete conversion-focused landing section with typographic hierarchy.",
+      "html": "<section class=\"ui-hero-pattern\"><span class=\"ui-pill\"><span class=\"dot\"></span> INTRODUCING STUDIO V2</span><h1>Make the internet<br><em>feel different.</em></h1><p>A delightful creative workspace for people who believe thoughtful details matter.</p><div class=\"ui-row\"><button class=\"ui-btn gradient\" data-toast=\"Getting started\">Start for free →</button><button class=\"ui-btn outline\" data-toast=\"Watch preview\">See it in action ↗</button></div></section>",
+      "category": "Patterns",
+      "symbol": "✳",
+      "kind": "pattern",
+      "tags": [
+        "Compositions",
+        "Ready to use"
+      ]
+    },
+    {
+      "id": "login-pattern",
+      "title": "Sign-in form",
+      "description": "A complete, client-side validated form layout ready to connect to your backend.",
+      "html": "<section class=\"ui-auth\"><h2>Welcome back.</h2><p>Sign in to continue to your workspace.</p><form data-demo-form><label class=\"ui-label\">Email address<input class=\"ui-input\" type=\"email\" autocomplete=\"email\" required placeholder=\"you@example.com\"></label><label class=\"ui-label\">Password<input class=\"ui-input\" type=\"password\" autocomplete=\"current-password\" required minlength=\"6\" placeholder=\"At least 6 characters\"></label><button class=\"ui-btn\" type=\"submit\">Sign in →</button></form><footer>Don't have an account? <a href=\"#signup\" style=\"color:var(--ui-accent)\">Create one</a></footer></section>",
+      "category": "Patterns",
+      "symbol": "✳",
+      "kind": "pattern",
+      "tags": [
+        "Compositions",
+        "Ready to use"
+      ]
+    },
+    {
+      "id": "pricing-pattern",
+      "title": "Pricing comparison",
+      "description": "Two-tier pricing with highlighted recommended plan.",
+      "html": "<div class=\"ui-pricing-row\"><article class=\"ui-card\"><small>FOR YOUR SIDE PROJECTS</small><h3>Starter</h3><div class=\"ui-price\">$0<span> / mo</span></div><ul class=\"ui-feature-list\"><li>3 projects</li><li>Basic components</li><li>Community access</li></ul><button class=\"ui-btn outline\" data-toast=\"Starter chosen\">Choose starter</button></article><article class=\"ui-card glass\"><span class=\"ui-pill\">POPULAR</span><h3>Studio Pro</h3><div class=\"ui-price\">$19<span> / mo</span></div><ul class=\"ui-feature-list\"><li>Unlimited projects</li><li>Every component</li><li>Premium support</li></ul><button class=\"ui-btn gradient\" data-toast=\"Pro chosen\">Get Pro →</button></article></div>",
+      "category": "Patterns",
+      "symbol": "✳",
+      "kind": "pattern",
+      "tags": [
+        "Compositions",
+        "Ready to use"
+      ]
+    },
+    {
+      "id": "dashboard-pattern",
+      "title": "Dashboard overview",
+      "description": "An entire miniature product dashboard with navigation and usable cards.",
+      "html": "<div class=\"ui-layout-dashboard\"><aside><b>✳ UI</b><span>◈ Home</span><span>▦ Reports</span><span>⚙ Settings</span></aside><main><small>WORKSPACE / OVERVIEW</small><h3>Good morning, Alex.</h3><div class=\"ui-card\" style=\"width:100%;margin:0 0 12px\"><small>YOUR TOTAL REACH</small><h3>284.6k <span style=\"font-size:11px;color:#8ce0b2\">↗ 18.4%</span></h3><div class=\"ui-mini-bars\"><i style=\"--h:24%\"></i><i style=\"--h:49%\"></i><i style=\"--h:37%\"></i><i style=\"--h:71%\"></i><i style=\"--h:64%\"></i><i style=\"--h:79%\"></i><i style=\"--h:100%\"></i></div></div><button class=\"ui-btn\" data-toast=\"Report opened\">View full report ↗</button></main></div>",
+      "category": "Patterns",
+      "symbol": "✳",
+      "kind": "pattern",
+      "tags": [
+        "Compositions",
+        "Ready to use"
+      ]
+    }
+  ]
+}
