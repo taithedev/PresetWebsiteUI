@@ -132,6 +132,10 @@ A component entry has id, title, description, category, symbol, tags and html, w
 
 The workspace file storage is device-local. JSON-imported components are also local-only. GitHub repository changes are a separate developer workflow.
 
+## Editable component builder
+
+The application route #/builder provides an HTML/CSS/JavaScript editor with an opaque-origin live preview, local draft persistence, one-click addition to the local component catalog, and a self-contained ZIP export. The inspector can send a copy of any built-in example into the builder without modifying the original definition.
+
 ## Accessible export workflow
 
 The inspector can export a ZIP with index.html, styles.css, script.js, component.json and README.md. The exported examples are framework-independent, but demo events (such as toast or login validation) do not replace backend integration. Files are assembled client-side. The source file fetch requires localhost or static web hosting rather than file://.
