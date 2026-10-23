@@ -41,3 +41,25 @@
 @media(max-width:680px){.sidebar{width:min(280px,84vw);transform:translateX(-100%);transition:transform .23s var(--ease);z-index:85}.sidebar.open{transform:none}.mobile-overlay{position:fixed;inset:0;background:#05040bbd;z-index:80}.mobile-menu,.mobile-close{display:grid}.main-column{margin-left:0}.topbar{height:64px;padding:0 17px}.topbar-github span{display:none}.search-launch{width:37px;padding:0;display:grid;place-items:center}.search-launch span,.search-launch kbd{display:none}.breadcrumb-root{display:none}.main-content{padding-inline:18px}.hero{padding-top:22px;min-height:auto}.hero-copy{padding:30px 0 5px}.hero h1{font-size:clamp(40px,10vw,61px);letter-spacing:-.07em}.hero-statline{margin-top:34px}.feature-bar{grid-template-columns:1fr}.feature-bar .feature:last-child{grid-column:auto}.cards-grid{grid-template-columns:1fr}.section-head{margin-top:43px;align-items:start}.section-head .text-link{margin-top:15px}.gallery-toolbar{align-items:stretch;flex-direction:column}.category-pills{flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}.category-pill{flex:none}.library-filter{width:100%}.page-heading{padding-top:32px}.page-heading h1{font-size:43px}.inspector{width:100%;border-radius:0}.inspector-heading{padding:18px 18px 12px}.inspector-actions{padding:0 18px 18px}.inspector-description{margin:0 18px 16px}.inspector-stage{height:245px}.studio-grid{grid-template-columns:1fr}.canvas-center{height:300px}.app-footer{margin-top:55px}.app-footer>div{gap:13px}}
 @media(max-width:390px){.hero-statline{gap:11px}.hero h1{font-size:40px}.hero-copy p{font-size:12px}.component-card p{min-height:0}}
 @media(prefers-reduced-motion:reduce){.hero-dashboard,.float-chip{animation:none}.inspector{animation:none}}
+
+
+/* Standalone builder / editable source workspace */
+.builder-layout{display:grid;grid-template-columns:minmax(0,.93fr) minmax(0,1.07fr);gap:16px;margin-top:28px;align-items:start}
+.builder-panel{border:1px solid var(--line);border-radius:15px;background:var(--surface);overflow:hidden}
+.builder-panel-head{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:57px;padding:12px 18px;border-bottom:1px solid var(--line);font-size:12px;font-weight:700}
+.builder-panel-head .micro{font-size:9px}.builder-field-group{padding:18px;display:grid;grid-template-columns:1fr;gap:12px}
+.builder-field{display:grid;gap:7px;color:var(--subtle);font-size:10px;font-weight:700}
+.builder-field input{border:1px solid var(--line);background:var(--background);color:var(--text);padding:11px 12px;border-radius:8px;font-size:12px;outline:0;width:100%}
+.builder-field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.builder-tabs{display:flex;gap:5px;padding:12px 18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.builder-tabs button{border:0;background:transparent;color:var(--muted);font-size:11px;padding:9px 15px;border-radius:8px;font-weight:700}
+.builder-tabs button[aria-selected=true]{background:var(--accent-soft);color:var(--accent)}
+.builder-editor{resize:vertical;display:block;min-height:365px;max-height:800px;width:100%;padding:20px;color:#e0d6f9;background:#0c0d15;border:0;outline:none;font:12px/1.7 "SFMono-Regular",Consolas,monospace;tab-size:2}
+.builder-editor:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.builder-panel-foot{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:14px 18px;border-top:1px solid var(--line)}
+.builder-panel-foot small{color:var(--muted);font-size:10px}
+.builder-iframe{display:block;width:100%;height:365px;border:0;background:#0f101b}
+.builder-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.builder-info{font-size:11px;line-height:1.75;color:var(--subtle);padding:18px;border-top:1px solid var(--line)}
+[data-theme=light] .builder-panel{background:#fff}[data-theme=light] .builder-editor{background:#181625;color:#f5eaff}
+@media(max-width:1120px){.builder-layout{grid-template-columns:1fr}.builder-editor{min-height:285px}.builder-iframe{height:300px}}
