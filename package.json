@@ -17,7 +17,9 @@
     "./catalog/navigation": "./assets/data/navigation.js",
     "./catalog/feedback": "./assets/data/feedback.js",
     "./catalog/surfaces": "./assets/data/surfaces.js",
-    "./catalog/patterns": "./assets/data/patterns.js"
+    "./catalog/patterns": "./assets/data/patterns.js",
+    "./catalog.json": "./catalog/components.json",
+    "./types": "./types/index.d.ts"
   },
   "files": [
     "assets/css/kit.css",
@@ -26,7 +28,9 @@
     "assets/data",
     "design-tokens.json",
     "AI_REFERENCE.md",
-    "README.md"
+    "README.md",
+    "catalog/components.json",
+    "types/index.d.ts"
   ],
   "keywords": [
     "ui",
