@@ -14,6 +14,7 @@ A real, exportable UI component library with 34 examples, live previews, rich da
 | Inspector | Sandboxed interactive preview and HTML / CSS / JavaScript viewer |
 | Source exports | Download working component ZIPs or the full kit, including real code |
 | Playground | Set bloom intensity, corners and five accent colors; export tokens |
+| Component builder | Edit HTML/CSS/JS with isolated preview, local draft autosave, library save and standalone ZIP export |
 | Saved items | Save and download a browser-local collection |
 | Custom components | Import JSON components with HTML, CSS and optional JS |
 | File workspace | Upload any file type, import folders, preview text, download originals, export folder ZIP |
@@ -77,6 +78,12 @@ You can install the source directly from GitHub using a package manager:
     npm install github:taithedev/PresetWebsiteUI
 
 The repository includes package exports for its shared CSS kit, interactions, structured catalog and types. **It has not been published to the npm registry by this update.** Alternatively, copy the standalone CSS and JavaScript from assets/ or use a source ZIP from the inspector. Check your project’s framework and CSS import conventions before using these files.
+
+## Building your own components
+
+Open Component builder in the Studio navigation. Edit HTML, CSS or JavaScript in the source editor and view your changes in a sandboxed live preview. Draft edits persist locally. Click Add to my library to save a custom entry (up to 50 local entries) or Export ZIP for source files. A built-in component can be opened in the Inspector and copied into the Builder using Edit copy.
+
+This is a browser-local authoring tool, not a hosted code execution service. Custom snippets are restricted to opaque-origin sandbox frames, but code may still make network requests; inspect untrusted code before importing.
 
 ## Adding components
 
