@@ -21,7 +21,9 @@
  if(!Number.isFinite(state.radius))state.radius=20;
  const kitCache={css:null,js:null};
  let toastTimer,activeCommandIndex=0,commands=[],vaultInitialized=false;
- const routeLabels={explore:"Discover",components:"Components",patterns:"Patterns",saved:"Saved items",playground:"Playground",files:"File workspace"};
+ const routeLabels={explore:"Discover",components:"Components",patterns:"Patterns",saved:"Saved items",playground:"Playground",builder:"Component builder",files:"File workspace"};
+ const defaultDraft={title:"Luminous feature",description:"A custom design made in the component builder.",html:'<div class="ui-card glass"><small>✳ CUSTOM COMPONENT</small><h3>Your next creation.</h3><p>A beautiful place to start. Edit this markup to make it yours.</p><div style="margin-top:18px"><button class="ui-btn gradient" data-toast="Hello from your component">Try this →</button></div></div>',css:"",js:""};
+ let draft={...defaultDraft,...read("preset-studio-draft",{})},builderTab="html",builderTimer;
  const container=$("#view-container");
  function toast(message){
    const node=$("#toast");node.textContent=message;node.classList.add("show");
@@ -147,6 +149,26 @@
   '<div class="config-panel"><div class="config-head">'+icon("sliders")+' Customize appearance</div><div class="config-body"><div class="config-field"><label for="bloom-input">Bloom intensity <output id="bloom-value">'+state.bloom+'%</output></label><input type="range" id="bloom-input" min="0" max="100" value="'+state.bloom+'"></div><div class="config-field"><label for="radius-input">Corner radius <output id="radius-value">'+state.radius+'px</output></label><input type="range" id="radius-input" min="4" max="36" value="'+state.radius+'"></div><div class="config-field"><label>Accent color</label><div class="config-swatches">'+colors+'</div></div><button class="primary-btn" id="copy-theme">'+icon("copy")+' Copy CSS tokens</button><button class="soft-btn" id="export-theme">'+icon("download")+' Download tokens.json</button><button class="soft-btn" id="reset-theme">Reset to defaults</button></div></div></div>'+
   '<div class="section-head"><div><span class="micro">DESIGN GUIDELINES</span><h2 class="section-title">The system, not just the shine.</h2><p class="section-subtitle">Use bloom as an accent. Keep typography sharp, spacing generous and keyboard interactions obvious.</p></div><a href="./docs/" class="text-link">Read implementation guide '+icon("arrow")+'</a></div><div class="feature-bar"><div class="feature"><span class="feature-icon">'+icon("sparkles")+'</span><div><b>Controlled bloom</b><p>Diffuse light behind crisp layers</p></div></div><div class="feature"><span class="feature-icon">'+icon("check")+'</span><div><b>Accessible controls</b><p>Semantic HTML and visible focus</p></div></div><div class="feature"><span class="feature-icon">'+icon("code")+'</span><div><b>Portable design</b><p>Pure CSS, JSON tokens and reusable source</p></div></div></div>';
  }
+
+ function builderView(){
+  const tabs=["html","css","js"].map(lang=>'<button type="button" role="tab" aria-selected="'+(builderTab===lang)+'" data-builder-tab="'+lang+'">'+lang.toUpperCase()+'</button>').join("");
+  return pageHeader("CREATOR TOOLS / COMPONENT BUILDER","Make your own component.","Write and preview HTML, CSS and JavaScript inside a sandbox. Keep your draft, add it to your local library or download a ready-to-run source ZIP.")+
+   '<div class="builder-layout"><div class="builder-panel"><div class="builder-panel-head"><span>YOUR COMPONENT</span><span class="micro">EDITABLE SOURCE</span></div>'+
+   '<div class="builder-field-group"><label class="builder-field">Component name<input id="builder-title" maxlength="100" value="'+safe(draft.title)+'" placeholder="My component"></label><label class="builder-field">Description<input id="builder-description" maxlength="220" value="'+safe(draft.description)+'" placeholder="What does it do?"></label></div>'+
+   '<div class="builder-tabs" role="tablist" aria-label="Component source">'+tabs+'</div><textarea class="builder-editor" id="builder-editor" aria-label="Edit '+builderTab+' source" spellcheck="false">'+safe(draft[builderTab]||"")+'</textarea>'+
+   '<div class="builder-panel-foot"><small>Draft automatically saved on this device.</small><button type="button" class="soft-btn" id="builder-reset">Reset example</button></div></div>'+
+   '<div><div class="builder-panel"><div class="builder-panel-head"><span><i class="live-dot"></i> LIVE PREVIEW</span><button type="button" class="soft-btn" id="builder-refresh">'+icon("arrow")+' Refresh</button></div><iframe class="builder-iframe" id="builder-frame" sandbox="allow-scripts" title="Sandboxed live component builder preview"></iframe><div class="builder-info">Custom code runs in an isolated iframe with no same-origin access to the Studio. Imported JavaScript can still request remote URLs. Only use code you trust.</div></div><div class="builder-actions"><button type="button" class="primary-btn" id="builder-save">'+icon("plus")+' Add to my library</button><button type="button" class="soft-btn" id="builder-export">'+icon("download")+' Export ZIP</button><button type="button" class="soft-btn" id="builder-copy">'+icon("copy")+' Copy markup</button></div></div></div>';
+ }
+ function builderItem(){
+  return {id:"custom-"+(draft.title||"component").toLowerCase().replace(/[^a-z0-9_-]/g,"-").slice(0,40)+"-"+Date.now().toString(36),
+   title:(draft.title||"Untitled component").slice(0,100),description:(draft.description||"Custom component").slice(0,220),category:"Custom",symbol:"＋",tags:["Custom","Created in Studio"],html:draft.html||"",css:draft.css||"",js:draft.js||""};
+ }
+ function updateBuilderPreview(){
+  const frame=$("#builder-frame");
+  if(frame)frame.srcdoc=frameHtml(builderItem(),"dark");
+ }
+ function persistDraft(){persist("preset-studio-draft",draft);}
+
  function applyPlayground(){
   const palette=palettes[state.accent];
   const preview=$("#canvas-preview");
@@ -171,9 +193,10 @@
   $$("[data-nav]").forEach(link=>{const active=link.dataset.nav===state.page;link.classList.toggle("active",active);if(active)link.setAttribute("aria-current","page");else link.removeAttribute("aria-current")});
   $$("#category-nav [data-category-nav]").forEach(btn=>btn.classList.toggle("active",state.page==="components"&&btn.dataset.categoryNav===state.category));
   document.title=names[state.page]+" — Preset UI Studio";
-  container.innerHTML=state.page==="explore"?explore():state.page==="components"?componentsView():state.page==="patterns"?patternsView():state.page==="saved"?savedView():state.page==="playground"?playgroundView():viewFiles();
+  container.innerHTML=state.page==="explore"?explore():state.page==="components"?componentsView():state.page==="patterns"?patternsView():state.page==="saved"?savedView():state.page==="playground"?playgroundView():state.page==="builder"?builderView():viewFiles();
   mountFrames();
   if(state.page==="playground")applyPlayground();
+  if(state.page==="builder")updateBuilderPreview();
   if(state.page==="files"){window.PresetVault.init($("#vault-root"),toast);window.PresetVault.render();}
   buildSidebar();
   // Restore focus only on route changes initiated from navigation.
@@ -316,6 +339,27 @@
    if(event.target.closest("#copy-theme"))await copy(themeCSS());
    if(event.target.closest("#export-theme")){download("preset-ui-tokens.json",JSON.stringify({accent:palettes[state.accent][0],accentRgb:palettes[state.accent][1],bloom:state.bloom/100,radius:state.radius,css:themeCSS()},null,2),"application/json");toast("Theme tokens downloaded.");}
    if(event.target.closest("#reset-theme")){state.bloom=66;state.radius=20;state.accent="violet";$("#bloom-input").value=66;$("#radius-input").value=20;applyPlayground();toast("Theme reset.");}
+   if(event.target.closest("[data-builder-tab]")){
+    builderTab=event.target.closest("[data-builder-tab]").dataset.builderTab;
+    $(".builder-tabs button").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.builderTab===builderTab)));
+    $("#builder-editor").value=draft[builderTab]||"";
+    $("#builder-editor").setAttribute("aria-label","Edit "+builderTab+" source");
+   }
+   if(event.target.closest("#builder-refresh")){updateBuilderPreview();toast("Live preview refreshed.");}
+   if(event.target.closest("#builder-copy"))await copy(draft.html||"");
+   if(event.target.closest("#builder-export"))await exportItem(builderItem());
+   if(event.target.closest("#builder-reset")){
+     if(window.confirm("Replace your current builder draft with the starter example?")){
+       draft={...defaultDraft};builderTab="html";persistDraft();render();toast("Starter example restored.");
+     }
+   }
+   if(event.target.closest("#builder-save")){
+     if(!draft.html.trim()){toast("Write some HTML before saving.");return;}
+     if(custom.length>=50){toast("Local library limit reached (50 custom components).");return;}
+     const item=builderItem();custom.push(item);catalog.push(item);persist("preset-studio-custom",custom);
+     buildSidebar();toast("Component added to your local library.");
+     location.hash="#/components?category=Custom";
+   }
    if(event.target.closest("#download-all"))await exportCollection(catalog.filter(x=>x.kind!=="pattern"),"preset-ui-full-kit");
    if(event.target.closest("#export-saved"))await exportCollection(catalog.filter(x=>saved.has(x.id)),"preset-ui-saved");
    if(event.target.closest("#import-json"))$("#json-picker").click();
@@ -329,10 +373,18 @@
    if(cards){cards.outerHTML=html;mountFrames()}
    const count=$(".gallery-meta strong",container);if(count)count.textContent=listing().length;
   }
+  if(event.target.id==="builder-editor"){draft[builderTab]=event.target.value;persistDraft();clearTimeout(builderTimer);builderTimer=setTimeout(updateBuilderPreview,380);}
+  if(event.target.id==="builder-title"){draft.title=event.target.value;persistDraft();}
+  if(event.target.id==="builder-description"){draft.description=event.target.value;persistDraft();}
   if(event.target.id==="bloom-input"){state.bloom=Number(event.target.value);applyPlayground();}
   if(event.target.id==="radius-input"){state.radius=Number(event.target.value);applyPlayground();}
  });
  $("#inspector-close").addEventListener("click",()=>$("#inspector").close());
+ $("#inspector-edit").addEventListener("click",()=>{
+   if(!state.inspected)return;
+   draft={title:state.inspected.title+" copy",description:state.inspected.description,html:state.inspected.html,css:state.inspected.css||"",js:state.inspected.js||""};
+   builderTab="html";persistDraft();$("#inspector").close();navTo("builder");
+ });
  $("#inspector").addEventListener("click",event=>{if(event.target===$("#inspector"))$("#inspector").close()});
  $("#inspector-save").addEventListener("click",()=>state.inspected&&save(state.inspected.id));
  $("#inspector-download").addEventListener("click",()=>state.inspected&&exportItem(state.inspected));
