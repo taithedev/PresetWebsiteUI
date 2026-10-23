@@ -1,17 +1,23 @@
-# Preset UI
-> A coded interface design reference with premium dark-glass styling, ambient bloom, motion, live previews and documentation. It is a visual reference, not a hosted API or a backend.
+# Preset UI Studio (v2.0)
+> A full browser-based, exportable, dependency-free UI library with 30 components, 4 complete patterns, an interactive playground, a sandboxed code inspector, component JSON imports and private local file workspace.
 
-## Primary reference documents
-- [AI Design Reference](./AI_REFERENCE.md): Full visual contract, design guidance, CSS recipes and copy-ready prompt for coding assistants.
-- [Documentation](./docs.html): Human-readable design system, components, accessibility, bloom and motion.
-- [Machine-readable design tokens](./design-tokens.json): Exact structured colors, typography, effects and breakpoints.
-- [Site source](./index.html): Coded interface examples and gallery structure.
-- [Stylesheet](./styles.css): Definitive implementation of tokens and visual effects.
-- [Project README](./README.md): Running locally, customization and deployment instructions.
-- [Coding agent guidelines](./AGENTS.md): Repository maintenance conventions.
+## Canonical reference files
+- [Visual and AI implementation guide](./AI_REFERENCE.md)
+- [Human documentation](./docs/)
+- [Machine-readable design tokens](./design-tokens.json)
+- [Reusable component CSS](./assets/css/kit.css)
+- [Exportable demo interactions](./assets/js/kit-interactions.js)
+- [Button examples](./assets/data/buttons.js)
+- [Form examples](./assets/data/forms.js)
+- [Navigation examples](./assets/data/navigation.js)
+- [Feedback examples](./assets/data/feedback.js)
+- [Surfaces examples](./assets/data/surfaces.js)
+- [Page patterns](./assets/data/patterns.js)
+- [Project README](./README.md)
+- [AI coding agent instructions](./AGENTS.md)
 
-## Reference URL
+## Usage
+Use this as a visual and front-end behavior reference, not as a hosted backend. Read actual CSS and catalog source before reproducing the style. If the AI system cannot access repository files, request their contents. Preserve the user's original application functionality, routing and backend.
+
+## Repository
 https://github.com/taithedev/PresetWebsiteUI
-
-## AI usage guidance
-Inspect AI_REFERENCE.md and styles.css before using this style as a reference. Recreate the visual principles in the destination stack and keep the destination application's functionality. If file access is unavailable, ask for the files instead of claiming to have read them. Do not assume the repository is deployed to a public site until a live URL is verified.
