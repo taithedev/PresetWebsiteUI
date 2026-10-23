@@ -7,6 +7,7 @@
  const icon=name=>'<svg aria-hidden="true"><use href="#i-'+name+'"/></svg>';
  const safe=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
  const palettes={violet:["#b39bff","179 155 255"],cyan:["#6bdcf2","107 220 242"],rose:["#ff8cb7","255 140 183"],mint:["#91e3bb","145 227 187"],gold:["#f7c37e","247 195 126"]};
+ const lightPalettes={violet:["#7355bb","115 85 187"],cyan:["#247e92","36 126 146"],rose:["#a73d6d","167 61 109"],mint:["#2d775d","45 119 93"],gold:["#93651e","147 101 30"]};
  const categories={Buttons:{dot:"#bba3ff",mark:"↗"},Forms:{dot:"#8bddf5",mark:"⌘"},Navigation:{dot:"#f0be85",mark:"⌁"},Feedback:{dot:"#8ce1b7",mark:"✦"},Surfaces:{dot:"#ed9dc0",mark:"◈"},Custom:{dot:"#d6c5a7",mark:"＋"}};
  const read=(key,otherwise)=>{try{return JSON.parse(localStorage.getItem(key))??otherwise;}catch{return otherwise;}};
  const persist=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value))}catch{ /* optional browser storage */ }};
@@ -49,7 +50,7 @@
    persist("preset-studio-theme",state.uiTheme);
    const element=$("#theme-switch");
    element?.setAttribute("aria-label","Switch to "+(state.uiTheme==="dark"?"light":"dark")+" theme");
-   const palette=palettes[state.accent];
+   const palette=(state.uiTheme==="light"?lightPalettes:palettes)[state.accent];
    document.documentElement.style.setProperty("--accent",palette[0]);
    document.documentElement.style.setProperty("--accent-rgb",palette[1]);
    document.documentElement.style.setProperty("--accent-soft","rgb("+palette[1]+" / .13)");
@@ -90,7 +91,7 @@
  function frameHtml(item,theme="dark"){
   const path=new URL("./assets/css/kit.css",location.href).href;
   const script=new URL("./assets/js/kit-interactions.js",location.href).href;
-  const palette=palettes[state.accent];
+  const palette=(theme==="light"?lightPalettes:palettes)[state.accent];
   const customCSS=typeof item.css==="string"?item.css:"";
   const customJS=typeof item.js==="string"?item.js:"";
   // User-added snippets are executed only inside a sandboxed opaque-origin iframe.
