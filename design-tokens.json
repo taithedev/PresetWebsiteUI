@@ -1,88 +1,72 @@
 {
-  "name": "Preset UI",
-  "version": "1.0.0",
-  "description": "Machine-readable visual reference for the Preset UI interface atelier. Complement with AI_REFERENCE.md and styles.css.",
-  "referenceRepository": "https://github.com/taithedev/PresetWebsiteUI",
-  "theme": {
-    "mode": "dark",
-    "colors": {
-      "background": "#080911",
-      "backgroundElevated": "#0d0e18",
-      "surface": "#10111b",
-      "surfaceRaised": "#181a28",
-      "surfaceHighest": "#222435",
-      "text": "#f5f4fd",
-      "textMuted": "#999aaf",
-      "textFaint": "#656779",
-      "border": "rgba(209,205,255,.105)",
-      "borderStrong": "rgba(209,205,255,.20)",
-      "accent": "#9b8cff",
-      "accentRgb": "155 140 255"
-    },
-    "accentOptions": {
-      "violet": "#9b8cff",
-      "cyan": "#62d8ef",
-      "pink": "#ff84b3",
-      "lime": "#b5e47a",
-      "amber": "#f4ba74"
+  "name": "Preset UI Studio",
+  "version": "2.0.0",
+  "repository": "https://github.com/taithedev/PresetWebsiteUI",
+  "description": "Machine-readable aesthetic and component token reference, not a runtime API.",
+  "studio": {
+    "background": "#090a10",
+    "surface": "#11121c",
+    "surface2": "#181925",
+    "surface3": "#222333",
+    "text": "#f3f3f8",
+    "subtle": "#a3a2b8",
+    "muted": "#747589",
+    "border": "rgba(210,205,255,.105)",
+    "borderStrong": "rgba(210,205,255,.19)",
+    "accent": "#b39bff",
+    "accentRgb": "179 155 255",
+    "radiusPx": 16,
+    "ease": "cubic-bezier(.22,1,.36,1)",
+    "fonts": {
+      "display": "Space Grotesk",
+      "body": "DM Sans"
     }
   },
-  "typography": {
-    "display": {
-      "family": "Space Grotesk",
-      "fallback": "system-ui, sans-serif",
-      "weight": 600,
-      "tracking": "-.065em",
-      "lineHeight": 1.1
+  "exportableKit": {
+    "background": "#10111c",
+    "text": "#f5f4fc",
+    "muted": "#9899b0",
+    "surface": "#191a28",
+    "border": "#ffffff22",
+    "accent": "#ad96ff",
+    "accentRgb": "173 150 255",
+    "radiusPx": 13,
+    "bloom": 0.55,
+    "stylePath": "assets/css/kit.css",
+    "scriptPath": "assets/js/kit-interactions.js"
+  },
+  "playgroundAccents": {
+    "violet": {
+      "hex": "#b39bff",
+      "rgb": "179 155 255"
     },
-    "body": {
-      "family": "DM Sans",
-      "fallback": "system-ui, sans-serif",
-      "weight": 400,
-      "lineHeight": 1.8
+    "cyan": {
+      "hex": "#6bdcf2",
+      "rgb": "107 220 242"
     },
-    "labels": {
-      "fontSize": "10px",
-      "weight": 700,
-      "letterSpacing": "1.5px"
+    "rose": {
+      "hex": "#ff8cb7",
+      "rgb": "255 140 183"
+    },
+    "mint": {
+      "hex": "#91e3bb",
+      "rgb": "145 227 187"
+    },
+    "gold": {
+      "hex": "#f7c37e",
+      "rgb": "247 195 126"
     }
   },
   "layout": {
-    "maxWidth": "1240px",
-    "desktopGutter": "36px",
-    "mobileGutter": "18px",
-    "spacingScalePx": [
-      4,
-      8,
-      12,
-      16,
-      24,
-      32,
-      48,
-      64,
-      96
-    ]
-  },
-  "shape": {
-    "largeRadius": "22px",
-    "mediumRadius": "11px",
-    "smallRadius": "6px",
-    "borderWidth": "1px"
-  },
-  "effects": {
-    "bloomDefault": 0.65,
-    "bloomMin": 0,
-    "bloomMax": 1,
-    "ambientBlur": "55px",
-    "ambientGlowExample": "rgb(155 140 255 / .65)",
-    "cardShadow": "0 0 calc(60px * var(--bloom)) rgb(var(--accent-rgb) / .32), 0 20px 50px #0008, inset 0 1px #ffffff25",
-    "recommendedMotionProperty": [
-      "transform",
-      "opacity"
-    ]
+    "sidebarPx": 246,
+    "topbarPx": 72,
+    "maxWidthPx": 1600,
+    "mobileMaxPx": 680,
+    "tabletMaxPx": 890,
+    "compactDesktopMaxPx": 1170,
+    "minViewportPx": 320
   },
   "motion": {
-    "ease": "cubic-bezier(.22,1,.36,1)",
     "hoverMs": [
       180,
       320
@@ -95,31 +79,37 @@
       6,
       12
     ],
-    "orbitSeconds": [
-      30,
-      65
+    "reducedMotionSupported": true
+  },
+  "catalog": {
+    "components": 30,
+    "patterns": 4,
+    "dataFiles": [
+      "assets/data/buttons.js",
+      "assets/data/forms.js",
+      "assets/data/navigation.js",
+      "assets/data/feedback.js",
+      "assets/data/surfaces.js",
+      "assets/data/patterns.js"
     ],
-    "respectReducedMotion": true
+    "categories": [
+      "Buttons",
+      "Forms",
+      "Navigation",
+      "Feedback",
+      "Surfaces",
+      "Patterns"
+    ]
   },
-  "breakpoints": {
-    "mobileMaxPx": 660,
-    "tabletMaxPx": 900,
-    "compactDesktopMaxPx": 1150
-  },
-  "presetNames": [
-    "Obsidian",
-    "Aurora",
-    "Halo",
-    "Prism",
-    "Orbit",
-    "Mono"
-  ],
-  "requirements": [
-    "Preserve functionality, backend and semantics",
-    "Responsive including 320px width",
-    "Keyboard navigation and focus-visible",
-    "prefers-reduced-motion",
-    "No fake UI actions or statuses",
-    "No secrets in frontend code"
-  ]
+  "features": {
+    "codeInspector": true,
+    "htmlCssJsExport": true,
+    "zipExport": true,
+    "tokenExport": true,
+    "search": true,
+    "favorites": true,
+    "customJsonImport": true,
+    "localFileWorkspace": true,
+    "remoteFileSync": false
+  }
 }
