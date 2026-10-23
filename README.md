@@ -1,101 +1,124 @@
-# Preset UI — The Interface Atelier
+# Preset UI Studio · v2.0
 
-A responsive, coded interface-reference website with **ambient bloom, dark glassmorphism, animated compositions, functional component previews, and detailed design documentation**.
+A real, exportable UI component library with 34 examples, live previews, rich dark-glass styling, local file workspace, custom JSON imports and dependency-free source exports.
 
-**[Explore the gallery](./index.html)** · **[Read the docs](./docs.html)** · **[AI design reference](./AI_REFERENCE.md)**
+[Explore Studio](./index.html) · [Documentation](./docs/) · [AI Reference](./AI_REFERENCE.md) · [Design Tokens](./design-tokens.json)
 
-> Intended as a visual reference for people and AI coding assistants. This is a functional static website, not a collection of screenshots.
+## Included tools
 
-## What's included
-
-- Six **coded UI directions**: Obsidian, Aurora, Halo, Prism, Orbit and Mono.
-- Full responsive landing page with editorial typography, glass panels, animated orbit details and atmospheric glow.
-- Interactive gallery filters and accessible preview dialogs.
-- **Live appearance studio**: adjust bloom (0–100%), corner radius, and five accent colors; copy generated CSS tokens.
-- Working theme toggle, mobile navigation and toast feedback.
-- Buttons, forms, status treatments, charts and component demos.
-- Dedicated documentation page with quick start, design tokens, component recipes, bloom effects, motion, responsive rules and accessibility.
-- **AI_REFERENCE.md**: structured instructions, visual specifications and a copy-ready prompt for AI-assisted projects.
-- Zero frontend framework or bundler dependency. Optional Google Fonts load, with system fallbacks.
-- Support for keyboard navigation and reduced-motion preferences.
-
-## Run it
-
-Clone the repository and open index.html in a modern browser. For a local static server:
-
-~~~sh
-git clone https://github.com/taithedev/PresetWebsiteUI.git
-cd PresetWebsiteUI
-python -m http.server 8000
-~~~
-
-Visit http://localhost:8000 and http://localhost:8000/docs.html.
-
-Python is only used here to host the files locally; the website itself is **plain HTML/CSS/JS**.
-
-## Use Preset UI as an AI design reference
-
-Give your AI coding assistant:
-
-**Repository:** https://github.com/taithedev/PresetWebsiteUI
-
-**Reference files:** AI_REFERENCE.md + styles.css + design-tokens.json (+ index.html for structural examples).
-
-Suggested instruction:
-
-> Read AI_REFERENCE.md and styles.css from https://github.com/taithedev/PresetWebsiteUI. Use this as the visual reference for my website: precise dark glass surfaces, bloom lighting, animated atmosphere, rounded controls, premium typography, and deliberate spacing. Adapt the look to my own product and keep every feature functional. Ensure mobile responsiveness, accessibility and reduced-motion support. If you cannot access the repository, ask me to provide the files; don't invent details.
-
-AI tools that cannot access GitHub will need files pasted/uploaded. See the full contract in [AI_REFERENCE.md](./AI_REFERENCE.md).
-
-## Files
-
-| File | Responsibility |
+| Area | Features |
 |---|---|
-| index.html | Gallery, hero, preset mockups, interactive studio |
-| styles.css | Color system, layouts, effects, component styles |
-| app.js | Theme switch, menu, presets, modal, studio, clipboard |
-| docs.html | Reference documentation |
-| docs.css | Documentation design and responsive layout |
-| docs.js | Documentation section tracking and demo interactions |
-| AI_REFERENCE.md | AI-friendly design contract |
-| AGENTS.md | Guidelines for future coding agents |
-| design-tokens.json | Structured design tokens for tools and AI assistants |
-| llms.txt | AI-oriented document index |
-| favicon.svg | Scalable brand mark |
+| Discover | Library homepage with featured reusable elements |
+| Components | Search/filter 30 components across five categories |
+| Patterns | Four complete hero, login, pricing and dashboard compositions |
+| Inspector | Sandboxed interactive preview and HTML / CSS / JavaScript viewer |
+| Source exports | Download working component ZIPs or the full kit, including real code |
+| Playground | Set bloom intensity, corners and five accent colors; export tokens |
+| Saved items | Save and download a browser-local collection |
+| Custom components | Import JSON components with HTML, CSS and optional JS |
+| File workspace | Upload any file type, import folders, preview text, download originals, export folder ZIP |
+| Documentation | Practical setup, accessibility, design system and AI usage |
 
-## Customize
+Showcase metrics and user states are illustrative. UI samples do not provide production logins, remote data, billing or authenticated APIs; connect your own backend.
 
-Change the CSS variables at the top of styles.css. To avoid mismatched hues, update both accent variables together:
+## Quick start
 
-~~~css
-:root {
-  --accent: #62d8ef;
-  --accent-rgb: 98 216 239;
-  --bloom: .65;
-  --radius: 22px;
-}
-~~~
+Clone the repository and serve its root as static files:
 
-Alternatively, open the home page's studio, adjust the visual settings and click **Copy CSS tokens**.
+    git clone https://github.com/taithedev/PresetWebsiteUI.git
+    cd PresetWebsiteUI
+    python -m http.server 8000
 
-## Deploy a static site
+Open http://localhost:8000/ and http://localhost:8000/docs/
 
-This repo is compatible with static hosting. For **GitHub Pages**, configure **Settings → Pages → Deploy from a branch**, choose **main** and **/(root)**. The repo uses relative asset paths so it also works at a repository subpath. Deployment availability depends on the repository's GitHub settings.
+No framework, Node packages, bundler, database or API keys are required. Directly opening a local file URL may prevent CSS/JS source exports because of browser restrictions: run localhost or use deployed static hosting for the full tool.
 
-For **Vercel** or **Netlify**, import this repository as a static project and use the repo root as the publish directory. No build command is required.
+## Folder structure
 
-This README does not imply the site is already deployed. Use the GitHub repository for the source until you verify a live hosting URL.
+    PresetWebsiteUI/
+    ├── index.html
+    ├── docs/
+    │   └── index.html
+    ├── assets/
+    │   ├── css/
+    │   │   ├── tokens.css
+    │   │   ├── shell.css
+    │   │   ├── kit.css
+    │   │   └── docs.css
+    │   ├── data/
+    │   │   ├── buttons.js
+    │   │   ├── forms.js
+    │   │   ├── navigation.js
+    │   │   ├── feedback.js
+    │   │   ├── surfaces.js
+    │   │   └── patterns.js
+    │   └── js/
+    │       ├── app.js
+    │       ├── kit-interactions.js
+    │       ├── zip.js
+    │       ├── vault.js
+    │       └── docs.js
+    ├── AI_REFERENCE.md
+    ├── design-tokens.json
+    ├── AGENTS.md
+    ├── llms.txt
+    └── README.md
 
-## Quality guidance
+The old docs.html URL redirects to docs/ for backwards compatibility.
 
-Motion is decorative, and reduced-motion preferences disable it. All primary controls use real HTML buttons and links, and preview overlays use native dialogs. The stylized dashboards are **visual examples**, not a financial service or a connected analytics backend. Status and charts inside mockups illustrate styles only.
+## Adding components
 
-The site contains no backend, authentication service, payment processing, API tokens, or real user-data collection. When reusing its style in another application, implement those functions separately rather than implying the reference site provides them.
+The category source files in assets/data/ append plain JavaScript objects to window.PresetLibrary. An imported JSON entry has this shape:
+
+    {
+      "id": "custom-button",
+      "title": "Custom button",
+      "description": "A custom actionable control",
+      "html": "<button class=\"ui-btn\">Continue</button>",
+      "css": ".ui-btn { letter-spacing: .02em; }",
+      "js": ""
+    }
+
+Import through Components → Import JSON components. It also accepts arrays and objects with a components array. Imported components are saved to localStorage, NOT committed to the shared GitHub repository. They render in sandboxed opaque-origin iframes, where custom scripts can run; only import code you trust. To add public built-ins, edit the relevant assets/data category file.
+
+## Exporting source
+
+An individual component ZIP includes:
+
+    component-name/
+      index.html      Runnable standalone example
+      styles.css      Kit CSS + design overrides
+      script.js       Portable demonstration interactions
+      component.json  Reusable metadata/markup
+      README.md       Usage notes
+
+Download whole kit exports the components as HTML example files with shared styles and scripts. All exports are assembled in your browser without a remote service. ZIP data is stored uncompressed to remove external library dependencies. Demo actions require real integrations before production use.
+
+## Browser-local file workspace
+
+File workspace uses **IndexedDB** to store arbitrary files as Blobs. Create folders, import directories, safely preview text formats, download individual files and export folders to ZIP. Imported files are never sent to this application's server.
+
+Limits: **20 MB per file**, **80 MB per batch**, subject to browser storage quota. No cloud synchronization or cross-device access exists. Clearing browser site data may delete everything in the workspace; download ZIP backups for important files. Directory import support varies by browser.
+
+## Theme & AI guidance
+
+Customize the full visual language in Playground; export CSS or design-token JSON. Use the shared assets/css/kit.css primitives directly in new projects.
+
+For AI-assisted coding, supply the public repository URL plus AI_REFERENCE.md, design-tokens.json and relevant assets/data files. An AI assistant cannot inspect those files merely because you mention the URL; it must have repo access or receive uploaded/pasted code.
+
+Example instruction: Use the Preset UI Studio repository as the visual reference. Adapt its dark glassmorphism, precise borders, tasteful bloom, motion and tokens while preserving my app's real features and backend. Make every control functional and accessible, including keyboard and reduced-motion support.
+
+## Keyboard controls
+
+Ctrl+K / Cmd+K opens global search. Arrow keys select a result, Enter opens it, and Escape closes dialogs. Native controls, focus styles, navigation links and reduced-motion support are included, but implement and test full accessibility requirements for your target product.
+
+## Hosting
+
+Deploy this static project through GitHub Pages, Vercel or Netlify. For GitHub Pages configure Settings → Pages → Deploy from a branch → main → /(root). The source is committed to GitHub, but that does not prove a live hosted URL is already available.
 
 ## Reuse
 
-Use the design documentation to inform your own implementation. **Public repository visibility is not automatically an open-source copyright license.** Check for a license or request permission before copying substantial original source code.
+Public visibility does not itself grant a copyright license. Check permissions before copying substantial source into external products. The design ideas may inspire independently authored implementations.
 
 ---
-
-Created for the [PresetWebsiteUI repository](https://github.com/taithedev/PresetWebsiteUI).
+Preset UI Studio · The Interface Atelier.
