@@ -70,7 +70,7 @@
   state.page=routeLabels[p]?p:"explore";
   const qs=new URLSearchParams(args||"");
   if(state.page==="components"&&qs.has("category"))state.category=qs.get("category")||"All";
-  else if(state.page!=="components")state.category="All";
+  else state.category="All";
   render();
  }
  function navTo(page){location.hash="#/"+page}
