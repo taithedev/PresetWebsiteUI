@@ -58,6 +58,10 @@ No framework, Node packages, bundler, database or API keys are required. Directl
     │       ├── zip.js
     │       ├── vault.js
     │       └── docs.js
+    ├── catalog/components.json       # Full manifest of 34 entries
+    ├── types/index.d.ts              # TypeScript schema
+    ├── examples/                     # Standalone dashboard and sign-in demos
+    ├── package.json                  # GitHub-installable CSS/JS exports
     ├── AI_REFERENCE.md
     ├── design-tokens.json
     ├── AGENTS.md
@@ -65,6 +69,14 @@ No framework, Node packages, bundler, database or API keys are required. Directl
     └── README.md
 
 The old docs.html URL redirects to docs/ for backwards compatibility.
+
+## Optional package consumption
+
+You can install the source directly from GitHub using a package manager:
+
+    npm install github:taithedev/PresetWebsiteUI
+
+The repository includes package exports for its shared CSS kit, interactions, structured catalog and types. **It has not been published to the npm registry by this update.** Alternatively, copy the standalone CSS and JavaScript from assets/ or use a source ZIP from the inspector. Check your project’s framework and CSS import conventions before using these files.
 
 ## Adding components
 
@@ -93,6 +105,8 @@ An individual component ZIP includes:
       README.md       Usage notes
 
 Download whole kit exports the components as HTML example files with shared styles and scripts. All exports are assembled in your browser without a remote service. ZIP data is stored uncompressed to remove external library dependencies. Demo actions require real integrations before production use.
+
+The whole machine-readable library is also available at [catalog/components.json](./catalog/components.json), and component types at [types/index.d.ts](./types/index.d.ts). The [standalone examples](./examples/) illustrate integration outside the Studio shell.
 
 ## Browser-local file workspace
 
