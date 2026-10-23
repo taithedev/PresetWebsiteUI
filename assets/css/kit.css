@@ -75,3 +75,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 @keyframes ui-spin{to{transform:rotate(360deg)}}@keyframes ui-shimmer{to{background-position-x:-200%}}
 @media(max-width:550px){.ui-stage{padding:12px}.ui-pricing-row{flex-direction:column}.ui-pricing-row .ui-card{width:min(290px,100%)}.ui-navbar{flex-wrap:wrap}.ui-navbar nav{gap:7px}.ui-table th,.ui-table td{padding:9px;font-size:9px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}}
+
+/* Accessible accent text contrast in the optional light preview. */
+:root[data-ui-theme="light"] .ui-btn:not(.outline):not(.ghost):not(.gradient){color:#fff}
+:root[data-ui-theme="light"] .ui-pill.success{color:#25674f}
+:root[data-ui-theme="light"] .ui-card.glass{color:#fff}
