@@ -1,0 +1,125 @@
+{
+  "name": "Preset UI",
+  "version": "1.0.0",
+  "description": "Machine-readable visual reference for the Preset UI interface atelier. Complement with AI_REFERENCE.md and styles.css.",
+  "referenceRepository": "https://github.com/taithedev/PresetWebsiteUI",
+  "theme": {
+    "mode": "dark",
+    "colors": {
+      "background": "#080911",
+      "backgroundElevated": "#0d0e18",
+      "surface": "#10111b",
+      "surfaceRaised": "#181a28",
+      "surfaceHighest": "#222435",
+      "text": "#f5f4fd",
+      "textMuted": "#999aaf",
+      "textFaint": "#656779",
+      "border": "rgba(209,205,255,.105)",
+      "borderStrong": "rgba(209,205,255,.20)",
+      "accent": "#9b8cff",
+      "accentRgb": "155 140 255"
+    },
+    "accentOptions": {
+      "violet": "#9b8cff",
+      "cyan": "#62d8ef",
+      "pink": "#ff84b3",
+      "lime": "#b5e47a",
+      "amber": "#f4ba74"
+    }
+  },
+  "typography": {
+    "display": {
+      "family": "Space Grotesk",
+      "fallback": "system-ui, sans-serif",
+      "weight": 600,
+      "tracking": "-.065em",
+      "lineHeight": 1.1
+    },
+    "body": {
+      "family": "DM Sans",
+      "fallback": "system-ui, sans-serif",
+      "weight": 400,
+      "lineHeight": 1.8
+    },
+    "labels": {
+      "fontSize": "10px",
+      "weight": 700,
+      "letterSpacing": "1.5px"
+    }
+  },
+  "layout": {
+    "maxWidth": "1240px",
+    "desktopGutter": "36px",
+    "mobileGutter": "18px",
+    "spacingScalePx": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64,
+      96
+    ]
+  },
+  "shape": {
+    "largeRadius": "22px",
+    "mediumRadius": "11px",
+    "smallRadius": "6px",
+    "borderWidth": "1px"
+  },
+  "effects": {
+    "bloomDefault": 0.65,
+    "bloomMin": 0,
+    "bloomMax": 1,
+    "ambientBlur": "55px",
+    "ambientGlowExample": "rgb(155 140 255 / .65)",
+    "cardShadow": "0 0 calc(60px * var(--bloom)) rgb(var(--accent-rgb) / .32), 0 20px 50px #0008, inset 0 1px #ffffff25",
+    "recommendedMotionProperty": [
+      "transform",
+      "opacity"
+    ]
+  },
+  "motion": {
+    "ease": "cubic-bezier(.22,1,.36,1)",
+    "hoverMs": [
+      180,
+      320
+    ],
+    "revealMs": [
+      500,
+      800
+    ],
+    "ambientSeconds": [
+      6,
+      12
+    ],
+    "orbitSeconds": [
+      30,
+      65
+    ],
+    "respectReducedMotion": true
+  },
+  "breakpoints": {
+    "mobileMaxPx": 660,
+    "tabletMaxPx": 900,
+    "compactDesktopMaxPx": 1150
+  },
+  "presetNames": [
+    "Obsidian",
+    "Aurora",
+    "Halo",
+    "Prism",
+    "Orbit",
+    "Mono"
+  ],
+  "requirements": [
+    "Preserve functionality, backend and semantics",
+    "Responsive including 320px width",
+    "Keyboard navigation and focus-visible",
+    "prefers-reduced-motion",
+    "No fake UI actions or statuses",
+    "No secrets in frontend code"
+  ]
+}
