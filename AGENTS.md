@@ -1,46 +1,42 @@
-# Instructions for AI coding assistants — PresetWebsiteUI
+# AI agent guidance for Preset UI Studio v2
 
 ## Mission
+Maintain a production-minded, beautiful, functional frontend UI library and visual reference. Its examples are working client-side demos with HTML/CSS/JS exports, not production backends.
 
-Maintain a high-quality **functional static reference website** for the Preset UI visual system. Preserve its coherent dark-glass identity, intentional ambient bloom, interaction polish, accessibility and documentation quality.
+## Read before editing
+- README.md
+- AI_REFERENCE.md
+- assets/css/tokens.css, shell.css and kit.css
+- assets/data/*.js
+- assets/js/app.js, zip.js and vault.js
+- docs/index.html and assets/css/docs.css
 
-## Read first
+## Required architecture
+- Keep the static site free of build steps unless a user explicitly requests one.
+- Library examples must be located in organized category files under assets/data, be self-contained markup, and rely on assets/css/kit.css.
+- Add data entries with unique slug IDs; required keys are id, title, description, category, html. Optional css/js/tags/symbol/kind. A full-page pattern has kind: pattern.
+- All visual controls in the demo kit must work where reasonable. Avoid fake buttons with no action, except for clearly illustrative, noninteractive dashboard chrome.
+- Keep the inspector sandbox: do NOT give imported snippets same-origin access to the parent. Render uploads as escaped text, not as executable HTML in the parent app.
+- Do not add secret keys or privileged APIs to browser files.
+- Preserve IndexedDB privacy semantics; file uploads remain local-only unless the user explicitly authorizes a remote storage product.
+- Maintain ZIP export compatibility with HTML, shared CSS/JS and metadata. Verify uncompressed archives in typical ZIP readers.
+- Keep design tokens and machine-readable docs consistent with any modified core styles.
+- Keep repository-relative asset links so hosting in a GitHub Pages subpath works.
 
-1. README.md — purpose and setup.
-2. AI_REFERENCE.md — visual language and design tokens.
-3. styles.css — authoritative live implementation.
-4. index.html + app.js — functionality and markup.
-5. docs.html + docs.css + docs.js — documentation.
+## Design principles
+Use midnight layered backgrounds, near-invisible borders, restrained violet bloom, precise typography, consistent rounded elements and purposeful motion. Do not blur text or create runaway GPU effects. Honor prefers-reduced-motion, keyboard navigation and mobile layout.
 
-## Project contract
+## Test checklist
+- Parse all JS and JSON sources; catch duplicate component IDs.
+- Test routes #/explore, #/components, #/patterns, #/playground, #/saved and #/files.
+- Test search (including Ctrl/Cmd+K and keyboard result navigation).
+- Test category filters and saved items with localStorage.
+- Test inspector modal, iframe preview (dark/light), code tabs and copy/export controls.
+- Test ZIP archive content and opening exported HTML/CSS/JS together.
+- Test component JSON importer including malformed and oversized input.
+- Test file uploads, nested folder imports, folder ZIP and text previews (do not execute uploaded scripts).
+- Test focus, touch, 320px narrow layouts, light/dark themes and reduced-motion.
+- State which browser tests were run and which remain unverified.
 
-- This is a **framework-free** site. Do not introduce a framework, build step, package manager, complex dependency chain or backend without a concrete requirement.
-- Preserve working asset paths relative to the repository root. The site must support both root hosting and GitHub Pages repository subpaths.
-- Keep tokens at the top of styles.css; update AI_REFERENCE.md and docs.html when token definitions or visual principles change.
-- Design new interface pieces with real semantic HTML/CSS/JS, never static screenshots as substitutes for functional elements.
-- Do not claim a mock card is connected to real data. Demo dashboards, balances and statuses are illustrative.
-- Buttons, filters, dialogs, sliders, toggles, forms and navigation must have real, testable behavior.
-- Respect keyboard access, discernible labels, visible focus, usable contrast and prefers-reduced-motion.
-- Never put passwords, privileged tokens, secrets or administrator controls in publicly shipped client code.
-- Avoid duplicated DOM IDs, DOM injection of user-controlled HTML and broad global event handlers that could break the site.
-- Optimize for mobile as well as 1440px desktop layouts; avoid horizontal overflow.
-- When adding pages, keep header, brand, type, navigation, and dark/light themes consistent.
-- Avoid excessive blur filters, long main-thread animations, unstable layout shifts and decorative components that intercept clicks.
-
-## Visual defaults
-
-Background #080911. Primary surface #10111b. Accent #9b8cff, paired RGB channels 155 140 255. Text #f5f4fd. Large radius 22px. Bloom 0.65. Space Grotesk for headings; DM Sans for UI text. Details are in AI_REFERENCE.md.
-
-## Before finishing any change
-
-- Verify JS syntax and that linked files actually exist.
-- Check nav links, gallery filters, preview dialog close (including Escape), theme toggle, bloom/radius/color controls and copied tokens.
-- Check docs anchors and copy prompt buttons.
-- Test at 320px, 660px, 900px and desktop widths where possible.
-- Check light and dark appearances and prefers-reduced-motion.
-- Document meaningful new reusable styles in docs.html and AI_REFERENCE.md.
-- Clearly state what you tested and what you could not verify.
-
-## Scope boundary
-
-Use this site to teach and showcase visual design. Do not automatically copy third-party trademarks or suggest the existing stylized mockups provide backend services.
+## Safety of imported snippets
+Custom JSON includes user-controlled HTML/CSS/JS. Only execute in sandboxed opaque-origin iframe. Even sandboxed code may make network requests; never present imported code as inherently trustworthy.
