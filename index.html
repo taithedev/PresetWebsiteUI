@@ -2,125 +2,116 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080911">
-  <meta name="description" content="Preset UI: an interactive library of premium interfaces, design tokens, bloom effects, and documentation for humans and AI coding assistants.">
-  <meta property="og:title" content="Preset UI — An interface atelier">
-  <meta property="og:description" content="A living gallery of thoughtfully crafted interfaces and reusable design recipes.">
-  <title>Preset UI — The interface atelier</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080910">
+  <meta name="description" content="Preset UI Studio: explore, customize, test and export production-ready interface components, patterns and design tokens.">
+  <title>Preset UI Studio — The interface library</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="./assets/css/tokens.css">
+  <link rel="stylesheet" href="./assets/css/shell.css">
 </head>
 <body>
-  <svg aria-hidden="true" class="svg-defs" xmlns="http://www.w3.org/2000/svg">
-    <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
-    <symbol id="ic-diagonal" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
-    <symbol id="ic-spark" viewBox="0 0 24 24"><path d="m12 2 2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></symbol>
-    <symbol id="ic-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
-    <symbol id="ic-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></symbol>
-    <symbol id="ic-moon" viewBox="0 0 24 24"><path d="M20 15.5A8.2 8.2 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></symbol>
-    <symbol id="ic-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
-    <symbol id="ic-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-    <symbol id="ic-x" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
-    <symbol id="ic-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></symbol>
-    <symbol id="ic-sliders" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2" fill="currentColor" stroke="none"/><circle cx="16" cy="17" r="2" fill="currentColor" stroke="none"/></symbol>
-    <symbol id="ic-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
-  </svg>
-  <div class="ambient ambient-one" aria-hidden="true"></div>
-  <div class="ambient ambient-two" aria-hidden="true"></div>
-  <div class="page-noise" aria-hidden="true"></div>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="./index.html" aria-label="Preset UI home">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span>preset<span class="brand-period">.</span><span class="brand-fine">ui</span></span>
-      </a>
-      <div class="nav-links" id="nav-links">
-        <a href="#presets">Presets</a><a href="#studio">Playground</a><a href="#components">Components</a><a href="./docs.html">Documentation</a>
+<svg class="svg-icons" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+ <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+ <symbol id="i-box" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 9v12"/></symbol>
+ <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5Zm-9 10 9 5 9-5M3 17l9 5 9-5"/></symbol>
+ <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2"/><circle cx="16" cy="17" r="2"/></symbol>
+ <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+ <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10H3V7Z"/></symbol>
+ <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4h6a4 4 0 0 1 4 4v13a4 4 0 0 0-4-4H4V4Zm16 0h-2a4 4 0 0 0-4 4v13a4 4 0 0 1 4-4h2V4Z"/></symbol>
+ <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.3"/><path d="m16.3 16.3 5 5"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+ <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+ <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+ <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+ <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 2 2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></symbol>
+ <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+ <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15.5A8.2 8.2 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></symbol>
+ <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+ <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></symbol>
+ <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+ <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></symbol>
+ <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+ <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 16v5h16v-5"/></symbol>
+ <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6m4-6v6"/></symbol>
+ <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 6 6 6-6 6m8 0h8"/></symbol>
+ <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+ <symbol id="i-command" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="3"/><rect x="14" y="3" width="7" height="7" rx="3"/><rect x="3" y="14" width="7" height="7" rx="3"/><rect x="14" y="14" width="7" height="7" rx="3"/><path d="M10 6h4M6 10v4m8 4h-4m8-8v4"/></symbol>
+ <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 10v7m0-10h.01"/></symbol>
+</svg>
+<a class="skip" href="#main">Skip to content</a>
+<div class="atmosphere" aria-hidden="true"><div class="atmo-a"></div><div class="atmo-b"></div></div>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="sidebar-brand"><a href="#/explore" class="brand"><span class="brand-icon">✳</span><span class="brand-type">preset<span class="brand-dot">.</span><span class="brand-ui">ui</span><small>STUDIO</small></span></a><button class="icon-btn mobile-close" id="close-nav" aria-label="Close menu"><svg><use href="#i-close"/></svg></button></div>
+    <div class="sidebar-scroll">
+      <div class="side-section-label">WORKSPACE</div>
+      <nav class="nav-group" id="primary-nav">
+        <a href="#/explore" data-nav="explore"><svg><use href="#i-grid"/></svg><span>Discover</span><span class="nav-key">01</span></a>
+        <a href="#/components" data-nav="components"><svg><use href="#i-box"/></svg><span>Components</span><span class="nav-count" id="component-count">—</span></a>
+        <a href="#/patterns" data-nav="patterns"><svg><use href="#i-layers"/></svg><span>Patterns</span></a>
+        <a href="#/playground" data-nav="playground"><svg><use href="#i-sliders"/></svg><span>Playground</span></a>
+        <a href="#/saved" data-nav="saved"><svg><use href="#i-heart"/></svg><span>Saved items</span><span class="nav-count" id="saved-count">0</span></a>
+        <a href="#/files" data-nav="files"><svg><use href="#i-folder"/></svg><span>File workspace</span></a>
+      </nav>
+      <div class="side-section-label browse-label">BROWSE BY TYPE</div>
+      <nav class="category-nav" id="category-nav" aria-label="Component categories"></nav>
+      <div class="side-section-label browse-label">RESOURCES</div>
+      <nav class="nav-group secondary-nav">
+        <a href="./docs/" target="_self"><svg><use href="#i-book"/></svg><span>Documentation</span><svg class="tail"><use href="#i-external"/></svg></a>
+        <a href="https://github.com/taithedev/PresetWebsiteUI" target="_blank" rel="noopener noreferrer"><svg><use href="#i-code"/></svg><span>Source on GitHub</span><svg class="tail"><use href="#i-external"/></svg></a>
+      </nav>
+    </div>
+    <div class="sidebar-footer">
+      <div class="sidebar-version"><span class="live-dot"></span><div><strong>Library v2.0</strong><small>Open source · browser-first</small></div></div>
+      <div class="side-bottom"><span>Crafted for creators.</span><span>© 2026</span></div>
+    </div>
+  </aside>
+  <div class="mobile-overlay" id="mobile-overlay" hidden></div>
+  <div class="main-column">
+    <header class="topbar">
+      <div class="topbar-leading"><button class="icon-btn mobile-menu" id="open-nav" aria-label="Open navigation"><svg><use href="#i-menu"/></svg></button><span class="breadcrumb-root">WORKSPACE</span><svg class="crumb-arrow"><use href="#i-chevron"/></svg><span class="breadcrumb-active" id="page-breadcrumb">Discover</span></div>
+      <div class="topbar-actions">
+        <button type="button" class="search-launch" id="search-launch"><svg><use href="#i-search"/></svg><span>Search anything...</span><kbd>⌘ K</kbd></button>
+        <span class="topbar-divider"></span>
+        <button type="button" class="icon-btn theme-switch" id="theme-switch" aria-label="Toggle light and dark theme"><svg class="sun"><use href="#i-sun"/></svg><svg class="moon"><use href="#i-moon"/></svg></button>
+        <a class="topbar-github" href="https://github.com/taithedev/PresetWebsiteUI" target="_blank" rel="noopener noreferrer" aria-label="View GitHub repository"><svg><use href="#i-code"/></svg><span>GitHub</span><svg><use href="#i-external"/></svg></a>
       </div>
-      <div class="nav-actions">
-        <button class="icon-button theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme"><svg class="icon moon-icon"><use href="#ic-moon"/></svg><svg class="icon sun-icon"><use href="#ic-sun"/></svg></button>
-        <a class="nav-github" href="https://github.com/taithedev/PresetWebsiteUI" target="_blank" rel="noopener noreferrer">View source <svg class="icon"><use href="#ic-diagonal"/></svg></a>
-        <button class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false"><svg class="icon"><use href="#ic-menu"/></svg></button>
-      </div>
-    </nav>
-  </header>
-  <main id="main">
-    <section class="hero container">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="eyebrow-dot"></span> THE INTERFACE ATELIER <span class="eyebrow-version">VOL. 01</span></div>
-        <h1>Make digital<br>feel <span class="gradient-word">different.</span></h1>
-        <p class="hero-description">A living collection of luminous interfaces, carefully crafted effects, and design recipes. Explore the details. Take the ideas. Build something unmistakable.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#presets">Explore the gallery <svg class="icon"><use href="#ic-arrow"/></svg></a>
-          <a class="button button-quiet" href="./docs.html">Read the design docs <svg class="icon"><use href="#ic-diagonal"/></svg></a>
-        </div>
-        <div class="hero-meta"><div class="avatar-stack"><span>P</span><span>✦</span><span>UI</span></div><span>Made to inspire humans <em>and</em> AI builders.</span></div>
-      </div>
-      <div class="hero-art" aria-label="Stylized dashboard design showcase">
-        <div class="orbit orbit-outer" aria-hidden="true"></div><div class="orbit orbit-inner" aria-hidden="true"></div>
-        <div class="hero-flare" aria-hidden="true"></div>
-        <div class="hero-panel tilt-card">
-          <div class="panel-top"><div class="traffic"><i></i><i></i><i></i></div><span>atelier / overview</span><svg class="icon"><use href="#ic-grid"/></svg></div>
-          <div class="panel-body">
-            <aside class="panel-sidebar"><div class="sidebar-symbol">✳</div><div class="sidebar-line active"></div><div class="sidebar-line"></div><div class="sidebar-line short"></div><div class="sidebar-spacer"></div><div class="sidebar-dot"></div></aside>
-            <div class="panel-content">
-              <div class="panel-caption">WORKSPACE <span class="mini-live"><i></i> LIVE</span></div>
-              <div class="panel-heading">Your creative pulse<span>↗</span></div>
-              <div class="panel-metrics"><div><small>Monthly reach</small><strong>284.6k</strong><span class="positive">↑ 18.4%</span></div><div><small>Conversion</small><strong>8.42%</strong><span>Last 30 days</span></div></div>
-              <div class="chart-lines"><div class="chart-gridline"></div><div class="chart-gridline"></div><div class="chart-gridline"></div><svg viewBox="0 0 390 135" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="area-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a794ff" stop-opacity=".48"/><stop offset="100%" stop-color="#a794ff" stop-opacity="0"/></linearGradient></defs><path d="M0 112 C25 108 34 82 57 95 S96 111 115 75 S156 90 180 63 S219 83 240 46 S284 61 307 31 S352 53 390 8 L390 135 L0 135Z" fill="url(#area-gradient)"/><path d="M0 112 C25 108 34 82 57 95 S96 111 115 75 S156 90 180 63 S219 83 240 46 S284 61 307 31 S352 53 390 8" fill="none" stroke="#bdadff" stroke-width="3" stroke-linecap="round"/></svg></div>
-              <div class="panel-bottom"><span><i class="legend-purple"></i> Growth trajectory</span><span>Jan — Dec 2026</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="floating-chip chip-top"><span class="chip-icon">✦</span><div><b>Light, refined.</b><small>Made with intention</small></div></div>
-        <div class="floating-chip chip-bottom"><span class="chip-color"></span><div><b>Bloom system</b><small>Reactive lighting</small></div><svg class="icon"><use href="#ic-spark"/></svg></div>
-        <span class="hero-art-label">FIG 01. / DEPTH & LIGHT</span>
-      </div>
-    </section>
-    <div class="separator container"><span>DESIGNED FOR THE NEXT THING</span><span class="separator-line"></span><span>SCROLL TO EXPLORE ↓</span></div>
-    <section class="presets-section container" id="presets">
-      <div class="section-heading"><div><span class="section-kicker">01 / CURATED INTERFACES</span><h2>Pick a direction<span class="accent-punctuation">.</span></h2><p>Six distinct visual systems. Every surface is built with real code and intentional detail.</p></div><div class="collection-count">COLLECTION <strong>001—006</strong></div></div>
-      <div class="filter-bar" role="group" aria-label="Filter presets">
-        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All presets <span>06</span></button>
-        <button class="filter-button" type="button" data-filter="dashboard" aria-pressed="false">Dashboards</button>
-        <button class="filter-button" type="button" data-filter="landing" aria-pressed="false">Landing pages</button>
-        <button class="filter-button" type="button" data-filter="commerce" aria-pressed="false">Commerce</button>
-        <button class="filter-button" type="button" data-filter="portfolio" aria-pressed="false">Portfolio</button>
-      </div>
-      <div class="preset-grid" id="preset-grid">
-        <article class="preset-card" data-category="dashboard"><div class="preset-visual visual-obsidian"><div class="mock-shell"><div class="mock-rail"><i>◈</i><b></b><b></b><b></b></div><div class="mock-main"><div class="mock-small">OVERVIEW / ANALYTICS</div><div class="mock-title">Performance <span>↗</span></div><div class="mock-blocks"><div class="mock-block"><small>Revenue</small><strong>$48,290</strong><em>+24.8%</em></div><div class="mock-block"><small>Visitors</small><strong>12,840</strong><em>+12.3%</em></div></div><div class="mock-bars"><i style="--h:32%"></i><i style="--h:56%"></i><i style="--h:43%"></i><i style="--h:70%"></i><i style="--h:55%"></i><i style="--h:86%"></i><i style="--h:75%"></i><i style="--h:96%"></i><i style="--h:78%"></i><i style="--h:100%"></i></div></div></div><span class="visual-watermark">01</span></div><div class="preset-info"><div><div class="preset-number">01 / DASHBOARD</div><h3>Obsidian</h3><p>Precision darkness. Violet neon. Quiet power.</p><div class="tag-row"><span>Glass</span><span>Analytics</span></div></div><button type="button" class="preset-open" data-open-preview aria-label="Preview Obsidian"><svg class="icon"><use href="#ic-diagonal"/></svg></button></div></article>
-        <article class="preset-card" data-category="landing"><div class="preset-visual visual-aurora"><div class="aurora-blob a"></div><div class="aurora-blob b"></div><div class="mock-landing-nav"><b>aurora<span>✳</span></b><span>Product &nbsp;&nbsp; About &nbsp;&nbsp; Pricing</span><i>Get started ↗</i></div><div class="mock-landing-copy"><small>NEW ERA OF CREATIVE FLOW</small><strong>Everything<br>in its <em>element.</em></strong><span>Bring your best ideas to life in one beautifully simple workspace.</span><b>Start creating ↗</b></div><span class="visual-watermark">02</span></div><div class="preset-info"><div><div class="preset-number">02 / LANDING</div><h3>Aurora</h3><p>Atmospheric gradients and fluid luminosity.</p><div class="tag-row"><span>Gradient</span><span>Editorial</span></div></div><button type="button" class="preset-open" data-open-preview aria-label="Preview Aurora"><svg class="icon"><use href="#ic-diagonal"/></svg></button></div></article>
-        <article class="preset-card" data-category="commerce"><div class="preset-visual visual-halo"><div class="halo-orb"></div><div class="halo-nav"><b>HALO®</b><span>Discover &nbsp;&nbsp; Collection &nbsp;&nbsp; ◯</span></div><div class="halo-product"><div class="halo-product-symbol">◌</div><span>THE FUTURE IS CLOSER</span><strong>Sound<br>without limits.</strong><i>EXPLORE PRODUCT ↗</i></div><span class="visual-watermark">03</span></div><div class="preset-info"><div><div class="preset-number">03 / COMMERCE</div><h3>Halo</h3><p>High-contrast product storytelling with bloom.</p><div class="tag-row"><span>Product</span><span>Immersive</span></div></div><button type="button" class="preset-open" data-open-preview aria-label="Preview Halo"><svg class="icon"><use href="#ic-diagonal"/></svg></button></div></article>
-        <article class="preset-card" data-category="dashboard"><div class="preset-visual visual-prism"><div class="prism-window"><div class="prism-header"><span>✦ PRISM <small>workspace</small></span><span>● ● ●</span></div><div class="prism-title">Welcome back, Alex <span>✳</span></div><div class="prism-kpis"><div><small>Total balance</small><b>$124,980</b><i>↑ 12.5%</i></div><div><small>Spending</small><b>$8,240</b><i>↓ 3.2%</i></div></div><div class="prism-line"><svg viewBox="0 0 300 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 62 Q30 50 52 56 T107 37 T165 42 T224 20 T300 4" fill="none" stroke="#b484ef" stroke-width="4" stroke-linecap="round"/></svg></div></div><span class="visual-watermark">04</span></div><div class="preset-info"><div><div class="preset-number">04 / DASHBOARD</div><h3>Prism</h3><p>Soft futuristic surfaces, restrained color.</p><div class="tag-row"><span>Fintech</span><span>Soft UI</span></div></div><button type="button" class="preset-open" data-open-preview aria-label="Preview Prism"><svg class="icon"><use href="#ic-diagonal"/></svg></button></div></article>
-        <article class="preset-card" data-category="landing"><div class="preset-visual visual-orbit"><div class="orbit-circle orbit-circle-one"></div><div class="orbit-circle orbit-circle-two"></div><div class="orbit-cross">✳</div><div class="orbit-top">O R B I T <span>MENU ↗</span></div><div class="orbit-copy"><small>INDEPENDENT CREATIVE STUDIO</small><strong>Beyond<br><i>ordinary.</i></strong><span>We make ideas impossible to ignore.</span></div><div class="orbit-footer"><span>SCROLL TO DISCOVER</span><span>© 2026 ORBIT</span></div><span class="visual-watermark">05</span></div><div class="preset-info"><div><div class="preset-number">05 / LANDING</div><h3>Orbit</h3><p>Experimental typography and kinetic geometry.</p><div class="tag-row"><span>Agency</span><span>Motion</span></div></div><button type="button" class="preset-open" data-open-preview aria-label="Preview Orbit"><svg class="icon"><use href="#ic-diagonal"/></svg></button></div></article>
-        <article class="preset-card" data-category="portfolio"><div class="preset-visual visual-mono"><div class="mono-nav"><b>m<span>.</span></b><span>Work &nbsp;&nbsp; About &nbsp;&nbsp; Contact ↗</span></div><div class="mono-copy"><small>INDEPENDENT DESIGNER / 2026</small><strong>Less,<br>but <i>better.</i></strong><span>Clarity in every pixel.</span></div><div class="mono-line"></div><div class="mono-foot">SELECTED WORK <span>01 — 06</span></div><span class="visual-watermark">06</span></div><div class="preset-info"><div><div class="preset-number">06 / PORTFOLIO</div><h3>Mono</h3><p>Editorial restraint and typography-first design.</p><div class="tag-row"><span>Minimal</span><span>Type</span></div></div><button type="button" class="preset-open" data-open-preview aria-label="Preview Mono"><svg class="icon"><use href="#ic-diagonal"/></svg></button></div></article>
-      </div>
-      <p class="empty-state" id="empty-state" hidden>No presets match this filter yet.</p>
-    </section>
-    <section class="studio-section" id="studio"><div class="container studio-layout">
-      <div class="studio-intro"><span class="section-kicker">02 / INTERACTIVE STUDIO</span><h2>Light is a<br><span class="gradient-word">material.</span></h2><p>Change the atmosphere in real time. Tune the glow, shape the corners, choose your accent, then take the tokens into your own project.</p><div class="studio-note"><svg class="icon"><use href="#ic-spark"/></svg> Every control changes real CSS custom properties.</div></div>
-      <div class="studio-workbench"><div class="workbench-bar"><span><i></i> LIVE CANVAS <span class="bar-divider">/</span> LIGHT ENGINE</span><span>PRESET LAB <strong>01</strong></span></div><div class="studio-preview" id="studio-preview"><div class="studio-preview-light"></div><div class="studio-demo-card"><div class="demo-card-top"><span class="demo-icon">✳</span><span class="demo-badge">LIVE PREVIEW</span></div><small>AVAILABLE BALANCE</small><strong>$24,680<span>.50</span></strong><div class="demo-chart"><span style="--i:30%"></span><span style="--i:55%"></span><span style="--i:43%"></span><span style="--i:72%"></span><span style="--i:57%"></span><span style="--i:85%"></span><span style="--i:66%"></span><span style="--i:100%"></span><span style="--i:78%"></span></div><div class="demo-card-foot"><span>Portfolio growth</span><b>+18.42% ↗</b></div></div></div><div class="studio-controls"><div class="controls-header"><svg class="icon"><use href="#ic-sliders"/></svg><b>Appearance controls</b><span>LIVE</span></div><div class="control-row"><label for="glow-range">Bloom intensity <output id="glow-output" for="glow-range">65%</output></label><input id="glow-range" type="range" min="0" max="100" value="65"></div><div class="control-row"><label for="radius-range">Corner radius <output id="radius-output" for="radius-range">22px</output></label><input id="radius-range" type="range" min="4" max="36" value="22"></div><div class="control-row accent-control"><span>Accent color</span><div class="swatch-row" role="group" aria-label="Select accent color"><button class="color-swatch selected" type="button" data-color="violet" aria-label="Violet accent" aria-pressed="true"></button><button class="color-swatch" type="button" data-color="cyan" aria-label="Cyan accent" aria-pressed="false"></button><button class="color-swatch" type="button" data-color="pink" aria-label="Pink accent" aria-pressed="false"></button><button class="color-swatch" type="button" data-color="lime" aria-label="Lime accent" aria-pressed="false"></button><button class="color-swatch" type="button" data-color="amber" aria-label="Amber accent" aria-pressed="false"></button></div></div><div class="control-bottom"><button class="button button-primary copy-tokens" type="button"><svg class="icon"><use href="#ic-copy"/></svg> Copy CSS tokens</button><button class="button button-reset" id="reset-controls" type="button">Reset</button></div></div></div>
-    </div></section>
-    <section class="components-section container" id="components"><div class="section-heading"><div><span class="section-kicker">03 / THE LITTLE DETAILS</span><h2>Every pixel has a job<span class="accent-punctuation">.</span></h2><p>A good interface is the sum of a thousand thoughtful decisions.</p></div></div><div class="components-grid">
-      <div class="component-card"><span class="component-label">01 / INTERACTION</span><h3>Buttons that respond.</h3><p>Subtle highlights, tactile depth, smooth transitions.</p><div class="component-play"><button class="button button-primary" type="button" id="demo-action">Take an action <svg class="icon"><use href="#ic-arrow"/></svg></button><button class="button button-outline" type="button" id="demo-secondary">Secondary</button></div></div>
-      <div class="component-card"><span class="component-label">02 / FEEDBACK</span><h3>Status with purpose.</h3><p>Small moments of clarity, without visual noise.</p><div class="component-play"><span class="status-pill"><i></i> All systems operational</span><span class="status-pill muted-pill">✳ &nbsp; In progress</span></div></div>
-      <div class="component-card"><span class="component-label">03 / INPUT</span><h3>Forms worth filling.</h3><p>Clear focus, accessible contrast, considered spacing.</p><div class="component-play"><label class="demo-input-label" for="demo-email">EMAIL ADDRESS</label><div class="demo-input-wrap"><input id="demo-email" type="email" placeholder="you@example.com" autocomplete="off"><span>↗</span></div></div></div>
-    </div></section>
-    <section class="docs-banner container"><div class="docs-banner-light" aria-hidden="true"></div><div><span class="section-kicker">04 / BUILT TO BE REUSED</span><h2>Don't just look.<br><span>Learn the system.</span></h2><p>Documented design tokens, copy-ready recipes, accessibility guidance, and a structured AI reference to help any builder implement the style accurately.</p><div class="docs-actions"><a class="button button-primary" href="./docs.html">Explore documentation <svg class="icon"><use href="#ic-arrow"/></svg></a><a class="button button-quiet" href="https://github.com/taithedev/PresetWebsiteUI/blob/main/AI_REFERENCE.md" target="_blank" rel="noopener noreferrer">AI reference <svg class="icon"><use href="#ic-diagonal"/></svg></a></div></div><div class="docs-code" aria-hidden="true"><div><span class="code-dots">● ● ●</span><span>tokens.css</span></div><pre><span class="syntax-muted">:root {</span>
-  <span class="syntax-blue">--surface</span>: #10111b;
-  <span class="syntax-blue">--accent</span>: <span class="syntax-purple">#9b8cff</span>;
-  <span class="syntax-blue">--radius</span>: 22px;
-  <span class="syntax-blue">--bloom</span>: 0.65;
-<span class="syntax-muted">}</span></pre></div></section>
-  </main>
-  <footer class="site-footer container"><div><a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>preset<span class="brand-period">.</span><span class="brand-fine">ui</span></span></a><p>Good design is a decision, not a decoration.</p></div><div class="footer-links"><a href="#presets">Presets</a><a href="#studio">Playground</a><a href="./docs.html">Docs</a><a href="https://github.com/taithedev/PresetWebsiteUI" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div><small>© 2026 PRESET UI · CRAFTED WITH INTENTION.</small></footer>
-  <dialog id="preview-modal" class="preview-modal" aria-labelledby="preview-heading"><div class="modal-head"><div><span class="section-kicker" id="preview-category">PRESET</span><h2 id="preview-heading">Preset preview</h2></div><button class="icon-button close-preview" type="button" aria-label="Close preview"><svg class="icon"><use href="#ic-x"/></svg></button></div><div class="preview-stage" id="preview-stage"></div><div class="modal-footer"><p id="preview-description"></p><a href="./docs.html#ai-reference" class="button button-primary">Use this visual language <svg class="icon"><use href="#ic-arrow"/></svg></a></div></dialog>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </header>
+    <main id="main" class="main-content" tabindex="-1">
+      <div id="view-container"></div>
+      <footer class="app-footer"><span><span class="footer-glyph">✳</span> Preset UI Studio <span class="footer-muted">— Interfaces worth building.</span></span><div><a href="./docs/">Documentation</a><a href="https://github.com/taithedev/PresetWebsiteUI" target="_blank" rel="noopener noreferrer">GitHub ↗</a><span>v2.0</span></div></footer>
+    </main>
+  </div>
+</div>
+<dialog class="inspector" id="inspector" aria-labelledby="inspector-title">
+  <div class="inspector-layout">
+    <div class="inspector-heading"><div class="inspector-id"><span id="inspector-symbol" class="inspector-symbol">✳</span><div><span class="overline" id="inspector-label">COMPONENT</span><h2 id="inspector-title">Component</h2></div></div><button type="button" class="icon-btn" id="inspector-close" aria-label="Close inspector"><svg><use href="#i-close"/></svg></button></div>
+    <p id="inspector-description" class="inspector-description"></p>
+    <div class="inspector-actions"><button type="button" id="inspector-save" class="soft-btn"><svg><use href="#i-heart"/></svg><span>Save</span></button><button type="button" id="inspector-copy" class="soft-btn"><svg><use href="#i-copy"/></svg> Copy code</button><button type="button" id="inspector-download" class="primary-btn"><svg><use href="#i-download"/></svg> Export .zip</button></div>
+    <div class="inspector-body"><div class="inspector-preview-header"><span><i class="live-dot"></i> LIVE RENDER</span><div class="preview-controls"><button class="pill-toggle active" data-preview-theme="dark" type="button">Dark</button><button class="pill-toggle" data-preview-theme="light" type="button">Light</button></div></div><div class="inspector-stage"><iframe id="inspector-frame" sandbox="allow-scripts" title="Live component preview"></iframe></div>
+      <div class="code-toolbar"><span>COMPONENT SOURCE</span><div id="code-tabs" class="code-tabs" role="tablist" aria-label="Source language"><button type="button" role="tab" aria-selected="true" data-code="html">HTML</button><button type="button" role="tab" aria-selected="false" data-code="css">CSS</button><button type="button" role="tab" aria-selected="false" data-code="js">JS</button></div><button type="button" class="code-copy" id="tab-copy"><svg><use href="#i-copy"/></svg><span>Copy</span></button></div><pre class="code-block" tabindex="0"><code id="inspector-code"></code></pre>
+      <div class="inspector-foot"><span>Copy the source or download all files. No package installation required.</span><button class="text-link" type="button" id="inspector-json">Download JSON ↗</button></div>
+    </div>
+  </div>
+</dialog>
+<dialog class="command-dialog" id="command-dialog" aria-label="Search library"><div class="command-search"><svg><use href="#i-search"/></svg><input id="command-input" type="search" placeholder="Search components, patterns or pages..." aria-label="Search library" autocomplete="off"><kbd>ESC</kbd></div><div class="command-results" id="command-results"></div><div class="command-footer"><span>↑ ↓ to navigate</span><span>↵ to open</span><span>ESC to close</span></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="file-picker" multiple hidden>
+<input type="file" id="folder-picker" multiple webkitdirectory directory hidden>
+<input type="file" id="json-picker" accept=".json,application/json" multiple hidden>
+<script src="./assets/data/buttons.js"></script>
+<script src="./assets/data/forms.js"></script>
+<script src="./assets/data/navigation.js"></script>
+<script src="./assets/data/feedback.js"></script>
+<script src="./assets/data/surfaces.js"></script>
+<script src="./assets/data/patterns.js"></script>
+<script src="./assets/js/zip.js"></script>
+<script src="./assets/js/vault.js"></script>
+<script src="./assets/js/app.js"></script>
 </body>
 </html>
