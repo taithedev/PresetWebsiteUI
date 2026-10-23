@@ -3,7 +3,7 @@
    Uploaded HTML/JS is shown only as escaped text; it is NEVER executed. */
 window.PresetVault = (() => {
  "use strict";
- let dbPromise, currentFolder="", root, toast=()=>{};
+ let dbPromise, currentFolder="", root, toast=()=>{}, pickersAttached=false;
  const MAX_FILE_SIZE=20*1024*1024, MAX_BATCH=80*1024*1024;
  const esc = value => String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
  const normalized = value => String(value || "").replaceAll("\\","/").split("/").filter(segment => segment && segment !== "." && segment !== "..").join("/").slice(0,380);
@@ -155,8 +155,11 @@ window.PresetVault = (() => {
   root.addEventListener("dragover",event=>{event.preventDefault();document.getElementById("vault-drop")?.classList.add("dragging")});
   root.addEventListener("dragleave",()=>document.getElementById("vault-drop")?.classList.remove("dragging"));
   root.addEventListener("drop",event=>{event.preventDefault();upload(event.dataTransfer.files);});
-  document.getElementById("file-picker").addEventListener("change",event=>{upload(event.target.files);event.target.value="";});
-  document.getElementById("folder-picker").addEventListener("change",event=>{upload(event.target.files);event.target.value="";});
+  if (!pickersAttached) {
+   pickersAttached=true;
+   document.getElementById("file-picker").addEventListener("change",event=>{upload(event.target.files);event.target.value="";});
+   document.getElementById("folder-picker").addEventListener("change",event=>{upload(event.target.files);event.target.value="";});
+  }
  }
  return {init,render,upload};
 })();
