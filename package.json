@@ -1,0 +1,45 @@
+{
+  "name": "preset-ui-studio",
+  "version": "2.0.0",
+  "description": "Framework-free, browser-first UI component library with interactive examples and exportable CSS/JS.",
+  "private": false,
+  "sideEffects": [
+    "./assets/css/*.css",
+    "./assets/js/kit-interactions.js"
+  ],
+  "exports": {
+    "./kit.css": "./assets/css/kit.css",
+    "./tokens.css": "./assets/css/tokens.css",
+    "./interactions.js": "./assets/js/kit-interactions.js",
+    "./design-tokens.json": "./design-tokens.json",
+    "./catalog/buttons": "./assets/data/buttons.js",
+    "./catalog/forms": "./assets/data/forms.js",
+    "./catalog/navigation": "./assets/data/navigation.js",
+    "./catalog/feedback": "./assets/data/feedback.js",
+    "./catalog/surfaces": "./assets/data/surfaces.js",
+    "./catalog/patterns": "./assets/data/patterns.js"
+  },
+  "files": [
+    "assets/css/kit.css",
+    "assets/css/tokens.css",
+    "assets/js/kit-interactions.js",
+    "assets/data",
+    "design-tokens.json",
+    "AI_REFERENCE.md",
+    "README.md"
+  ],
+  "keywords": [
+    "ui",
+    "components",
+    "glassmorphism",
+    "bloom",
+    "frontend",
+    "css",
+    "design-system"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taithedev/PresetWebsiteUI.git"
+  },
+  "homepage": "https://github.com/taithedev/PresetWebsiteUI"
+}
